@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Add extra plugins before the bootstrap plug in -->
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Jquery UI -->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<!-- Custom Styles -->
+		<link rel="stylesheet" href="css/stylesheet.css">
+
+		<title>Tourism NZ - Great Kiwi Road Trip</title>
+	</head>
+	<body>
+		
+		<!-- Landing page of the site -->
+		<div class="section bg-light" id="titleScreen">
+			<div class="row align-items-center justify-content-md-center">
+				<div class="text-center align-middle">
+					<h1 class="display-1">Tourism New Zealand Presents</h1>
+					<h2 class="display-4">The Great Kiwi Road Trip</h2>
+					<button class="btn btn-lg btn-primary" id="startRentalProcess"><a href="#groupDetailsScreen">Start Your Journey</a></button>
+				</div>
+			</div>
+		</div>
+		<!-- Landing page ends -->
+		
+		<!-- Enter group details page -->
+		<div class="section bg-light" id="groupDetailsScreen">
+			<div class="row">
+				<!-- Image container -->
+				<div class="img-filler col-6" id="groupDetailsImg">
+					
+				</div>
+				<!-- Form Container -->
+				<div class="col-6">
+					<h3>Group Details</h3>
+					<hr>
+					
+					<h4>Select Dates</h4>
+					<!-- Select start date -->
+					<div class="row">
+						<!-- Starting date -->
+						<div class="date-picker-container">
+							<label for="startDate">Pick Up (YYYY-MM-DD)</label>
+							<input type="text" id="startDate" size="30" class="form-control date-picker" required>
+						</div>
+						<!-- Ending date -->
+						<div class="date-picker-container">
+							<label for="endDate">Drop Off (YYYY-MM-DD)</label>
+							<input type="text" id="endDate" size="30" class="form-control date-picker" required>
+						</div>
+					</div>
+					<h4>Group Size</h4>
+					<!-- Group Size -->
+					<div class="row">
+						<div>
+							<!-- Icon will go here -->
+							<select class="form-control date-picker" id="groupSize">
+      							<option value="1">1</option>
+      							<option value="2">2</option>
+      							<option value="3">3</option>
+      							<option value="4">4</option>
+      							<option value="5">5</option>
+      							<option value="6">6</option>
+    						</select>
+						</div>
+					</div>
+					<!-- Submit button container -->
+					<div class="row">
+						<div class="col">
+							<button class="btn btn-lg btn-primary float-right submit-btn" id="submitPartyDetailsBtn"><a href="#vehicleSelectScreen">Submit</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of group details section -->
+
+		<!-- Picking vehicles section -->
+		<div class="section bg-light" id="vehicleSelectScreen">
+			<div class="row">
+				<!-- Form Container -->
+				<div class="col-9">
+					<h3>Pick Vehicle</h3>
+					<hr>
+					<!-- Car cards -->
+					<div class="row align-items-center justify-content-md-center" id="vehicleCard">
+						<!-- Vehicles cars are dynamically added here -->
+					</div>
+					<!-- Submit button -->
+					<button class="btn btn-lg btn-primary float-right submit-btn" id="vehicleSubmitBtn"><a href="#plotCourseScreen">Submit</a></button>
+				</div>
+				<!-- Image container -->
+				<div class="img-filler col-3" id="vehiclSelectImg">
+				</div>
+			</div>
+		</div>
+		<!-- End of picking vehicle section -->
+
+		<!-- Map section -->
+		<div class="section bg-light" id="plotCourseScreen">
+			<div class="row">
+				<!-- Map -->
+				<div class="col-8">
+					<div id="map"></div>
+				</div>
+				<!-- Form container -->
+				<div class="col-4">
+					<h3>Plot Course</h3>
+					<hr>
+					<!-- Autofill starting input -->
+					<label for="startingInput">Starting Location</label>
+					<input type="text" class="form-control" id="startingInput"> <br>
+					<!-- Checklist section -->
+					<label for="stopCheckboxes">Stops</label>
+					<!-- Checkbox container -->
+					<div class="stops-container form-check">
+						<!-- Hamilton -->
+						<input type="checkbox" class="form-check-input" value="Hamilton, New Zealand" id="stopCheckHamilton">
+						<label for="stopCheckHamilton" class="form-check-label">Hamilton</label><br>
+						<!-- Tauranga -->
+						<input type="checkbox" class="form-check-input" value="Tauranga, New Zealand" id="stopCheckTauranga">
+						<label for="stopCheckTauranga" class="form-check-label">Tauranga</label><br>
+						<!-- Rotorua -->
+						<input type="checkbox" class="form-check-input" value="Rotorua, New Zealand" id="stopCheckRotorua">
+						<label for="stopCheckRotorua" class="form-check-label">Rotorua</label><br>
+						<!-- Taupo -->
+						<input type="checkbox" class="form-check-input" value="Taupo, New Zealand" id="stopCheckTaupo">
+						<label for="stopCheckTaupo" class="form-check-label">Taupo</label><br>
+						<!-- New Plymouth -->
+						<input type="checkbox" class="form-check-input" value="New Plymouth, New Zealand" id="stopCheckNewPlymouth">
+						<label for="stopCheckNewPlymouth" class="form-check-label">New Plymouth</label><br>
+						<!-- Palmerston North -->
+						<input type="checkbox" class="form-check-input" value="Palmerston North, New Zealand" id="stopCheckPalmerstonNorth">
+						<label for="stopCheckPalmerstonNorth" class="form-check-label">Palmerston North</label><br>
+					</div>
+					<!-- Checkbox container end -->
+					<!-- Autofill end input -->
+					<label for="endingInput">Ending Location</label>
+					<input type="text" class="form-control" id="endingInput"><br>
+					<!-- Button container -->
+					<div>
+						<button class="btn btn-lg btn-block btn-primary" id="plotCourseBtn">Plot Course</button>
+						<button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button>
+						<button class="btn btn-lg btn-block btn-primary" id="bookTripBtn"><a href="#bookTripScreen">Book Trip</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of map section -->
+
+		<!-- Trip Details page -->
+		<div class="section bg-light" id="bookTripScreen">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h1>Thank You For Booking Your Trip</h1>
+					<h2>Trip Details</h2>
+				</div>
+				<!-- Script dynamically adds read trip details to div -->
+				<div class="col-7 mx-auto" id="tripDetailsReadOut">
+					
+				</div>
+			</div>			
+		</div>
+		<!-- End of trip details page -->
+
+		<!-- Modal for vehicles -->
+		<div class="vehicle-modal">
+			<div class="vehicle-modal-info">
+				<div class="close-bar">
+					&times;
+				</div>
+				<div id="vehicleInfoModal" class="vehicle-info-popup">
+	
+				</div>
+				<div class="col-12 close-modal-btn"> 
+					<button class="btn btn-block btn-danger" id="closeVehicleInfo">Close</button>
+				</div>
+			</div>
+		</div>
+		<!-- End of modal for vehicle -->
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!-- From Jquery UI (Needed instead of the bootstrap version). Always start with jquery as everything else is dependant upon jquery -->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<!-- Bootstrap JavaScript libaries -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!-- Optional JavaScript. Finish with your script as this will be modifying the other js files -->
+		<script src="js/config.json"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

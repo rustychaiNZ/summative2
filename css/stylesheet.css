@@ -1,0 +1,219 @@
+.vehicle-modal {
+  z-index: 98;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: none;
+  display: none;
+  position: fixed; }
+
+.vehicle-modal-info {
+  z-index: 99;
+  background: #fff;
+  width: 800px;
+  margin: 3% auto; }
+  .vehicle-modal-info h5 {
+    font-size: 1.5em; }
+  .vehicle-modal-info h4 {
+    font-size: 2em;
+    padding-bottom: 5px; }
+
+.close-bar {
+  font-size: 50px;
+  text-align: right;
+  padding: 0 20px;
+  cursor: pointer;
+  background-color: #272f38;
+  color: #edf1f7; }
+
+.close-bar:hover {
+  color: black; }
+
+.close-modal-btn {
+  padding-bottom: 15px; }
+
+.no-scroll {
+  overflow: hidden; }
+
+.car-modal-thumbnail {
+  height: 50vh; }
+
+.modal-info {
+  padding-top: 20px; }
+
+.modal-info_right {
+  margin-top: 17px; }
+
+* {
+  scroll-behavior: smooth; }
+
+.date-picker {
+  width: 270px; }
+
+.date-picker-container {
+  margin: 0 15% 50px 0; }
+
+.section {
+  min-height: 100vh; }
+
+.row {
+  margin: 0; }
+
+.margin-auto {
+  margin: auto; }
+
+.vehicle-card {
+  width: 30vw;
+  margin: 10px 35px; }
+
+.vehicle-card:hover {
+  box-shadow: 5px 5px 15px darkgrey;
+  cursor: pointer; }
+
+.car-card-thumbnail {
+  height: 25vh;
+  width: 100%; }
+
+.submit-btn {
+  margin-top: 25px; }
+
+.btn a {
+  text-decoration: none;
+  color: inherit; }
+
+.btn-cards {
+  margin: 5px 5px; }
+
+.img-filler {
+  min-height: 100vh;
+  display: block; }
+
+#startRentalProcess {
+  margin-top: 10%; }
+
+#map {
+  min-height: 100vh;
+  margin: 0 -15px; }
+
+#vehiclSelectImg {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/lakePukakiNewZealand.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#groupDetailsImg {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/queenstownHillNewZealand.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#titleScreen {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/roadToMountCook.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; }
+
+#bookTripScreen {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/wanakaOtagoTree.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; }
+
+/* -- Vehicle Images -- */
+#suzukiGsx1 {
+  width: 100%;
+  background-image: url("../assets/suzukiGsx1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#suzukiGsx2 {
+  width: 100%;
+  background-image: url("../assets/suzukiGsx2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#suzukiGsx3 {
+  width: 100%;
+  background-image: url("../assets/suzukiGsx3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#suzukiSwift1 {
+  width: 100%;
+  background-image: url("../assets/suzukiSwift1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#suzukiSwift2 {
+  width: 100%;
+  background-image: url("../assets/suzukiSwift2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#suzukiSwift3 {
+  width: 100%;
+  background-image: url("../assets/suzukiSwift3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#mazdaSix1 {
+  width: 100%;
+  background-image: url("../assets/mazdaSix1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#mazdaSix2 {
+  width: 100%;
+  background-image: url("../assets/mazdaSix2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#mazdaSix3 {
+  width: 100%;
+  background-image: url("../assets/mazdaSix3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#fiatDucato1 {
+  width: 100%;
+  background-image: url("../assets/fiatDucato1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#fiatDucato2 {
+  width: 100%;
+  background-image: url("../assets/fiatDucato2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#fiatDucato3 {
+  width: 100%;
+  background-image: url("../assets/fiatDucato3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+/*# sourceMappingURL=stylesheet.css.map */

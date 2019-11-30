@@ -1,0 +1,220 @@
+@import 'modals';
+*{
+	scroll-behavior: smooth;
+}
+.date-picker{
+	width: 270px;
+}
+.date-picker-container{
+	margin: 0 15% 50px 0;
+}
+.section{
+	min-height: 100vh;
+}
+.row{
+	margin: 0;
+}
+.margin-auto{
+	margin: auto;
+}
+.vehicle-card{
+	width: 30vw;
+	margin: 10px 35px;
+}
+.vehicle-card:hover{
+	box-shadow: 5px 5px 15px darkgrey;
+	cursor: pointer;
+}
+.car-card-thumbnail{
+	height: 25vh;
+	width: 100%;
+}
+.submit-btn{
+	margin-top: 25px;
+}
+.btn{
+	a{
+		text-decoration: none;
+		color: inherit;
+	}
+}
+.btn-cards{
+	margin: 5px 5px;
+}
+.img-filler{
+	min-height: 100vh;
+	display: block;
+}
+
+#startRentalProcess{
+	margin-top: 10%;
+}
+#map{
+	min-height: 100vh;
+	margin: 0 -15px;
+}
+ 
+// Site Images
+#vehiclSelectImg{
+	min-height: 100vh;
+	width: 100%;
+	background-image: url('../assets/lakePukakiNewZealand.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#groupDetailsImg{
+	min-height: 100vh;
+	width: 100%;
+	background-image: url('../assets/queenstownHillNewZealand.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#titleScreen{
+	min-height: 100vh;
+	width: 100%;
+	background-image: url('../assets/roadToMountCook.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+#bookTripScreen{
+	min-height: 100vh;
+	width: 100%;
+	background-image: url('../assets/wanakaOtagoTree.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+/* -- Vehicle Images -- */
+// Motor bike
+#suzukiGsx1{
+	width: 100%;
+	background-image: url('../assets/suzukiGsx1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#suzukiGsx2{
+	width: 100%;
+	background-image: url('../assets/suzukiGsx2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#suzukiGsx3{
+	width: 100%;
+	background-image: url('../assets/suzukiGsx3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+// Small Car
+#suzukiSwift1{
+	width: 100%;
+	background-image: url('../assets/suzukiSwift1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#suzukiSwift2{
+	width: 100%;
+	background-image: url('../assets/suzukiSwift2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#suzukiSwift3{
+	width: 100%;
+	background-image: url('../assets/suzukiSwift3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+// Big Car
+#mazdaSix1{
+	width: 100%;
+	background-image: url('../assets/mazdaSix1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#mazdaSix2{
+	width: 100%;
+	background-image: url('../assets/mazdaSix2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#mazdaSix3{
+	width: 100%;
+	background-image: url('../assets/mazdaSix3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+// Mobile Home
+#fiatDucato1{
+	width: 100%;
+	background-image: url('../assets/fiatDucato1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#fiatDucato2{
+	width: 100%;
+	background-image: url('../assets/fiatDucato2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+#fiatDucato3{
+	width: 100%;
+	background-image: url('../assets/fiatDucato3.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
