@@ -7,9 +7,9 @@ var myKey = JSON.parse(apiKey); // Convert JSON data into js object
 // Dynamically creating the script element
 var script = document.createElement('script');
 // Giving the src attribute to the google plug in from external json file
-script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&libraries=places&callback=initMap';
+script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&callback=initMap';
 // Appending to the body of index.html
-document.getElementsByTagName('body')[0].appendChild(script);
+document.getElementsByTagName('body')[0].appendChild(script); 
 
 // Car array
 var vehicles = [

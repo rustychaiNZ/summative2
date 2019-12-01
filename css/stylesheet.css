@@ -62,8 +62,7 @@
   margin: 5px 5px; }
 
 .selected-vehicle {
-  border-color: red;
-  border-width: 6px; }
+  background-color: red; }
 
 * {
   scroll-behavior: smooth; }
