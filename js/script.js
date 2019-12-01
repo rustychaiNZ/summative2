@@ -128,18 +128,25 @@ function rentalLength(){
 	return;
 }
 
+// Clears vehicles cards to stop program from duplicating cards
+function clearCards(){
+	document.getElementById('vehicleCard').innerHTML = '';
+}
+
 $('#submitPartyDetailsBtn').click(function(){
+	clearCards();
 	rentalLength();
 	groupSizeCalculator();
 	console.log(userDetails);
 	filterCars();
-	displayVehicleModal();
 });
 
 // Group Size function
 function groupSizeCalculator(){
 	var amountOfPassangers = parseInt(document.getElementById('groupSize').value);
 	userDetails.groupSize = amountOfPassangers;
+
+	return;
 }
 
 /*
@@ -149,9 +156,9 @@ function groupSizeCalculator(){
 	* Allows user to click image to display more information from modal about the vehicle
 */
 // Creates vehicle cards
-function displayCard(){
+function displayCard(i){
 	document.getElementById('vehicleCard').innerHTML += 
-		'<div class="card vehicle-card">' +
+		'<div class="card vehicle-card" id="' + vehicles[i].id + '">' +
 			// Div uses id to show an image as a div background 
 			'<div id="' + vehicles[i].img1 + '" class="car-card-thumbnail vehicle-popup" data-toggle="modal" data-target="#vehicleModal">' +
 				// Button to open information modal
@@ -160,13 +167,42 @@ function displayCard(){
 			'<div class="card-body">' +
 				'<h5 class="card-title">' + vehicles[i].make + '</h5>' + 
 				'<h6 class="card-title">' + vehicles[i].model + '</h6>' +
-				'<button class="btn btn-sm btn-block btn-secondary" id="selectVehicleBtn">Select</button>' +
+				'<button class="btn btn-sm btn-block btn-secondary select-car-btn" id="' + vehicles[i].id + '">Select</button>' +
 			'</div>' +
 		'</div>';
 }
 
+// Function that filters vehilces depnding on whether they fit the group criteria
+function filterCars(){
+	for(var j=0; j<vehicles.length; j++){
+		// Finds appropriate car cards to display based on time rented and number of group members
+		if((userDetails.noOfDays <= vehicles[j].maxRental) && (userDetails.noOfDays >= vehicles[j].minRental) && (userDetails.groupSize >= vehicles[j].minCapacity) && (userDetails.groupSize <= vehicles[j].maxCapacity)){
+			// Function called to display the car cards
+			displayCard(j);
+		}
+	}
+	// Allows the user to be able to view the vehicle inofrmation modal
+	openVehicleInfo();
+	selctVehicle();
+}
+
+// Making a selction of vehicle
+function selctVehicle(){
+	$('.select-car-btn').on('click', function(){
+		console.log(this.id);
+		// Gives the user feedback to show them that the car has been selected
+		for(var i=0; i<vehicles.length; i++){
+			if(this.id == vehicles[i].id){
+				$(this.id).addClass('selected-vehicle');
+			}
+		}
+		userDetails.selectedVehicle = this.id;
+		console.log(userDetails);
+	});
+}
+
 // Modal information
-function displayVehicleModal(){
+function displayVehicleModal(i){
 	document.getElementById('vehicleInfoModal').innerHTML = 
 	'<div class="modal-body">' + 
 	// Contains the carousel of photos of the vehicle that the user is viewing
@@ -219,6 +255,7 @@ function displayVehicleModal(){
 		'</div>' +
 	'</div>';
 }
+
 // Function to open the vehicle modal
 function openVehicleInfo(){
 	$('.btn-cards').on('click', function(){
@@ -228,11 +265,11 @@ function openVehicleInfo(){
 		$('.vehicle-modal').show();
 		// Makes the background of the modal freeze in place
 		$('body').addClass('no-scroll');
-		for(i=0; i<vehicles.length; i++) {
+		for(var j=0; j<vehicles.length; j++) {
 			// This looks at the id defined and checksfor equivalence with the vehicle's id that was clicked. It will dispaly the information
-			if(this.id == vehicles[i].id) {
+			if(this.id == vehicles[j].id) {
 				// Prints the vehicles that was clicked into the modal with the correlating information
-				displayVehicleModal();
+				displayVehicleModal(j);
 			}
 		}
 	});
@@ -256,24 +293,6 @@ function openVehicleInfo(){
 	});
 }
 
-// Function that filters vehilces depnding on whether they fit the group criteria
-function filterCars(){
-	console.log('filter cars function is active');
-	for(var i=0; i<vehicles.length; i++){
-		displayCard();
-		console.log('should loop 4 times');
-		// if((userDetails.noOfDays <= vehicles[i].maxRental) && (userDetails.noOfDays >= vehicles[i].minRental)){
-		// 	displayCard();
-		// }
-		break;
-	}
-	displayVehicleModal();
-}
-
-// for(var i=0; i<vehicles.length; i++){
-// 	displayCard();
-// 	openVehicleInfo();
-// }
 
 var map;
 function initMap() {

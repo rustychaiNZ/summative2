@@ -46,6 +46,25 @@
 .modal-info_right {
   margin-top: 17px; }
 
+.vehicle-card {
+  width: 30vw;
+  margin: 10px 35px; }
+
+.vehicle-card:hover {
+  box-shadow: 5px 5px 15px darkgrey;
+  cursor: pointer; }
+
+.car-card-thumbnail {
+  height: 25vh;
+  width: 100%; }
+
+.btn-cards {
+  margin: 5px 5px; }
+
+.selected-vehicle {
+  border-color: red;
+  border-width: 6px; }
+
 * {
   scroll-behavior: smooth; }
 
@@ -64,27 +83,12 @@
 .margin-auto {
   margin: auto; }
 
-.vehicle-card {
-  width: 30vw;
-  margin: 10px 35px; }
-
-.vehicle-card:hover {
-  box-shadow: 5px 5px 15px darkgrey;
-  cursor: pointer; }
-
-.car-card-thumbnail {
-  height: 25vh;
-  width: 100%; }
-
 .submit-btn {
   margin-top: 25px; }
 
 .btn a {
   text-decoration: none;
   color: inherit; }
-
-.btn-cards {
-  margin: 5px 5px; }
 
 .img-filler {
   min-height: 100vh;
