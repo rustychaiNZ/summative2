@@ -46,6 +46,23 @@
 .modal-info_right {
   margin-top: 17px; }
 
+.trip-modal {
+  z-index: 98;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: none;
+  display: none;
+  position: fixed; }
+
+.vehicle-modal-info {
+  z-index: 99;
+  background: #fff;
+  width: 800px;
+  margin: 3% auto; }
+
 .vehicle-card {
   width: 30vw;
   margin: 10px 35px; }
@@ -88,6 +105,20 @@
 .btn a {
   text-decoration: none;
   color: inherit; }
+
+.stops-container {
+  max-height: 23vh;
+  margin-bottom: 10px;
+  padding: 10px 35px;
+  overflow: auto;
+  font-size: 1.3em; }
+
+.directions-panel {
+  max-height: 25vh;
+  padding: 10px;
+  margin-top: 15px;
+  display: none;
+  overflow: auto; }
 
 .img-filler {
   min-height: 100vh;

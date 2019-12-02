@@ -1,3 +1,4 @@
+// Vehicle modal detials
 .vehicle-modal{
 	z-index: 98;
 	width: 100%;
@@ -48,3 +49,56 @@
 .modal-info_right{
 	margin-top: 17px;
 }
+// Trip details modal
+.trip-modal{
+	z-index: 98;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.4);
+	overflow: none;
+	display: none;
+	position: fixed;
+}
+.vehicle-modal-info{
+	z-index: 99;
+	background: #fff;
+	width: 800px;
+	margin: 3% auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

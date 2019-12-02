@@ -112,42 +112,104 @@
 				<div class="col-4">
 					<h3>Plot Course</h3>
 					<hr>
-					<!-- Autofill starting input -->
+					<!-- Selection starting input -->
 					<label for="startingInput">Starting Location</label>
-					<input type="text" class="form-control" id="startingInput"> <br>
+					<select id="startingInput" class="form-control">
+						<option value="Auckland">Auckland</option>
+						<option value="Taupo">Taupo</option>
+						<option value="Wellington">Wellington</option>
+						<option value="Nelson">Nelson</option>
+						<option value="Christchurch">Christchurch</option>
+						<option value="Queenstown">Queenstown</option>
+						<option value="Dunedin">Duendin</option>
+					</select>
 					<!-- Checklist section -->
-					<label for="stopCheckboxes">Stops</label>
+					<label for="stopCheckboxes">Popular Stops:</label>
 					<!-- Checkbox container -->
-					<div id="checkboxLocations" class="stops-container form-check">
-						<!-- Hamilton -->
-						<input type="checkbox" class="form-check-input" value="Hamilton, New Zealand" id="stopCheckHamilton">
-						<label for="stopCheckHamilton" class="form-check-label">Hamilton</label><br>
-						<!-- Tauranga -->
-						<input type="checkbox" class="form-check-input" value="Tauranga, New Zealand" id="stopCheckTauranga">
-						<label for="stopCheckTauranga" class="form-check-label">Tauranga</label><br>
-						<!-- Rotorua -->
-						<input type="checkbox" class="form-check-input" value="-38.136894, 176.248937" id="stopCheckRotorua">
-						<label for="stopCheckRotorua" class="form-check-label">Rotorua</label><br>
-						<!-- Taupo -->
-						<input type="checkbox" class="form-check-input" value="-38.684347, 176.070451" id="stopCheckTaupo">
-						<label for="stopCheckTaupo" class="form-check-label">Taupo</label><br>
-						<!-- New Plymouth -->
-						<input type="checkbox" class="form-check-input" value="New Plymouth, New Zealand" id="stopCheckNewPlymouth">
-						<label for="stopCheckNewPlymouth" class="form-check-label">New Plymouth</label><br>
+					<div id="checkboxLocations" class="stops-container bg-white form-check">
+						<!-- Invercargill -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Invercargill">
+						<label for="Invercargill" class="form-check-label">Invercargill</label><br>
+						<!-- Dunedin -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Dunedin">
+						<label for="Dunedin" class="form-check-label">Dunedin</label><br>
+						<!-- Queenstown -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Queenstown">
+						<label for="Queenstown" class="form-check-label">Queenstown</label><br>
+						<!-- Wanaka -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Wanaka">
+						<label for="Wanaka" class="form-check-label">Wanaka</label><br>
+						<!-- Timaru -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Timaru">
+						<label for="Timaru" class="form-check-label">Timaru</label><br>
+						<!-- Christchurch -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Christchurch">
+						<label for="Christchurch" class="form-check-label">Christchurch</label><br>
+						<!-- Greymouth -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Greymouth">
+						<label for="Greymouth" class="form-check-label">Greymouth</label><br>
+						<!-- Blenheim -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Blenheim, New Zealand">
+						<label for="Blenheim" class="form-check-label">Blenheim</label><br>
+						<!-- Picton -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Picton">
+						<label for="Picton" class="form-check-label">Picton</label><br>
+						<!-- Nelson -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Nelson">
+						<label for="Nelson" class="form-check-label">Nelson</label><br>
+						<!-- Wellington -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Wellington">
+						<label for="Wellington" class="form-check-label">Wellington</label><br>
 						<!-- Palmerston North -->
-						<input type="checkbox" class="form-check-input" value="Palmerston North, New Zealand" id="stopCheckPalmerstonNorth">
-						<label for="stopCheckPalmerstonNorth" class="form-check-label">Palmerston North</label><br>
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North">
+						<label for="Palmerston North" class="form-check-label">Palmerston North</label><br>
+						<!-- New Plymouth -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="New Plymouth, New Zealand" id="stopCheckNewPlymouth">
+						<label for="stopCheckNewPlymouth" class="form-check-label">New Plymouth</label><br>
+						<!-- Taupo -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="-38.684347, 176.070451" id="stopCheckTaupo">
+						<label for="stopCheckTaupo" class="form-check-label">Taupo</label><br>
+						<!-- Gisborne -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Gisborne" id="stopCheckGisborne">
+						<label for="stopCheckGisborne" class="form-check-label">Gisborne</label><br>
+						<!-- Napier -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Napier">
+						<label for="Napier" class="form-check-label">Napier</label><br>
+						<!-- Rotorua -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="-38.136894, 176.248937" id="stopCheckRotorua">
+						<label for="stopCheckRotorua" class="form-check-label">Rotorua</label><br>
+						<!-- Tauranga -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Tauranga, New Zealand" id="stopCheckTauranga">
+						<label for="stopCheckTauranga" class="form-check-label">Tauranga</label><br>
+						<!-- Hamilton -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Hamilton, New Zealand" id="stopCheckHamilton">
+						<label for="stopCheckHamilton" class="form-check-label">Hamilton</label><br>
+						<!-- Auckland -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North, New Zealand" id="Auckland">
+						<label for="Auckland" class="form-check-label">Auckland</label><br>
+						<!-- Russell -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Russell, New Zealand">
+						<label for="Russell" class="form-check-label">Russell</label><br>
 					</div>
 					<!-- Checkbox container end -->
 					<!-- Autofill end input -->
 					<label for="endingInput">Ending Location</label>
-					<input type="text" class="form-control" id="endingInput"><br>
+					<select id="endingInput" class="form-control">
+						<option value="Dunedin">Duendin</option>
+						<option value="Queenstown">Queenstown</option>
+						<option value="Christchurch">Christchurch</option>
+						<option value="Nelson">Nelson</option>
+						<option value="Wellington">Wellington</option>
+						<option value="Taupo">Taupo</option>
+						<option value="Auckland">Auckland</option>
+					</select> <br>
 					<!-- Button container -->
 					<div>
 						<button class="btn btn-lg btn-block btn-primary" id="plotCourseBtn">Plot Course</button>
-						<button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button>
+						<!-- <button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button> -->
 						<button class="btn btn-lg btn-block btn-primary" id="bookTripBtn"><a href="#bookTripScreen">Book Trip</a></button>
 					</div>
+					<div id="directionsPanel" class="directions-panel bg-white"></div>
 				</div>
 			</div>
 		</div>
@@ -175,7 +237,7 @@
 					&times;
 				</div>
 				<div id="vehicleInfoModal" class="vehicle-info-popup">
-	
+					<!-- Content about car is dynamically added here -->
 				</div>
 				<div class="col-12 close-modal-btn"> 
 					<button class="btn btn-block btn-danger" id="closeVehicleInfo">Close</button>
@@ -183,6 +245,22 @@
 			</div>
 		</div>
 		<!-- End of modal for vehicle -->
+
+		<!-- Modal for trip details -->
+		<div class="trip-modal">
+			<div class="trip-modal-info">
+				<div class="close-bar">
+					&times;
+				</div>
+				<div id="tripDetailsModalContent" class="trip-info-popup">
+	
+				</div>
+				<div class="col-12 close-modal-btn"> 
+					<button class="btn btn-block btn-danger" id="closeTripDetails">Close</button>
+				</div>
+			</div>
+		</div>
+		<!-- End of modal for trip details -->
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<!-- From Jquery UI (Needed instead of the bootstrap version). Always start with jquery as everything else is dependant upon jquery -->

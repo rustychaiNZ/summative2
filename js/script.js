@@ -7,7 +7,7 @@ var myKey = JSON.parse(apiKey); // Convert JSON data into js object
 // Dynamically creating the script element
 var script = document.createElement('script');
 // Giving the src attribute to the google plug in from external json file
-script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&libraries=places&callback=initMap';
+script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&callback=initMap';
 // Appending to the body of index.html
 document.getElementsByTagName('body')[0].appendChild(script);
 
@@ -315,22 +315,21 @@ function initMap() {
 	// When the submit button is clicked, the function to calculate the distance between the start and stop markers are calculated
 	document.getElementById('plotCourseBtn').addEventListener('click', function() {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
+		$('.directions-panel').show();
 	});
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 	var waypts = [];
-	// Gets the user's selected stops from the waypoints multi select box
-	var checkboxArray = document.getElementById('checkboxLocations');
+	// Gets the user's selected stops from checkbox input for stops along the way
+	var checkboxArray = document.querySelectorAll('input[type=checkbox]:checked');
 	// Loop is to find if more than one waypoint has been selected
 	for (var i = 0; i < checkboxArray.length; i++) {
 		// If more than one point is selected, the waypoints are added to an array
-		if (checkboxArray.options[i].selected) {
-			waypts.push({
-				location: checkboxArray[i].value,
-				stopover: true
-			});
-		}
+		waypts.push({
+			location: checkboxArray[i].value,
+			stopover: true
+		});
 	}
 
 	directionsService.route({
@@ -350,22 +349,25 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
 			console.log(route);
 
-			var summaryPanel = document.getElementById('directions-panel');
+			var summaryPanel = document.getElementById('directionsPanel');
 			summaryPanel.innerHTML = '';
 			// For each route, display summary information.
 			for (var i = 0; i < route.legs.length; i++) {
-				var routeSegment = i + 1;
-				summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-						'</b><br>';
-				summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-				summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-				summaryPanel.innerHTML += route.legs[i].distance.text + '<br>'; 
-				summaryPanel.innerHTML += route.legs[i].duration.text + '<br>';
+				// var routeSegment = i + 1;
+				// summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +'</b><br>';
+				// summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+				// summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+				// summaryPanel.innerHTML += route.legs[i].distance.text + '<br>'; 
+				// summaryPanel.innerHTML += route.legs[i].duration.text + '<br>';
 				var distance = route.legs[i].distance.text;
+
+				summaryPanel.innerHTML = '<b>Total Distance for trip is:' +  + '</b>';
 			}
 		} else {
 			window.alert('Directions request failed due to ' + status);
 		}
 	});
 }
+
+
 

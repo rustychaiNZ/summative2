@@ -9,7 +9,7 @@ var script = document.createElement('script');
 // Giving the src attribute to the google plug in from external json file
 script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&callback=initMap';
 // Appending to the body of index.html
-document.getElementsByTagName('body')[0].appendChild(script); 
+document.getElementsByTagName('body')[0].appendChild(script);
 
 // Car array
 var vehicles = [
@@ -321,16 +321,14 @@ function initMap() {
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 	var waypts = [];
 	// Gets the user's selected stops from the waypoints multi select box
-	var checkboxArray = document.getElementById('checkboxLocations');
+	var checkboxArray = document.querySelectorAll('input[type=checkbox]:checked');
 	// Loop is to find if more than one waypoint has been selected
 	for (var i = 0; i < checkboxArray.length; i++) {
 		// If more than one point is selected, the waypoints are added to an array
-		if (checkboxArray.options[i].selected) {
-			waypts.push({
-				location: checkboxArray[i].value,
-				stopover: true
-			});
-		}
+		waypts.push({
+			location: checkboxArray[i].value,
+			stopover: true
+		});
 	}
 
 	directionsService.route({
