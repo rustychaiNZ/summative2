@@ -18,11 +18,11 @@
 		
 		<!-- Landing page of the site -->
 		<div class="section bg-light" id="titleScreen">
-			<div class="row align-items-center justify-content-md-center">
+			<div class="row align-items-center justify-content-md-center landing-page">
 				<div class="text-center align-middle">
 					<h1 class="display-1">Tourism New Zealand Presents</h1>
 					<h2 class="display-4">The Great Kiwi Road Trip</h2>
-					<button class="btn btn-lg btn-primary" id="startRentalProcess"><a href="#groupDetailsScreen">Start Your Journey</a></button>
+					<button class="btn btn-lg btn-primary btn-start-stop" id="startRentalProcess"><a href="#groupDetailsScreen">Start Your Journey</a></button>
 				</div>
 			</div>
 		</div>
@@ -207,7 +207,7 @@
 					<div>
 						<button class="btn btn-lg btn-block btn-primary" id="plotCourseBtn">Plot Course</button>
 						<!-- <button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button> -->
-						<button class="btn btn-lg btn-block btn-primary" id="bookTripBtn"><a href="#bookTripScreen">Book Trip</a></button>
+						<button class="btn btn-lg btn-block btn-primary" id="bookTripBtn">Book Trip</button>
 					</div>
 					<div id="directionsPanel" class="directions-panel bg-white"></div>
 					<div id="total" class="directions-panel bg-white"></div>
@@ -220,12 +220,18 @@
 		<div class="section bg-light" id="bookTripScreen">
 			<div class="row">
 				<div class="col-12 text-center">
-					<h1 class="display-1">Thank You For Booking Your Trip</h1>
+					<h2 class="display-1">Thank You For Booking Your Trip!</h2>
 					<h2 class="display-4">Trip Details</h2>
 				</div>
+			</div>
 				<!-- Script dynamically adds read trip details to div -->
-				<div class="col-7 mx-auto" id="tripDetailsReadOut">
-					
+				<div class="row justify-content-md-center">
+					<div class="col-7 mx-auto bg-white" id="tripDetailsReadOut">
+						
+					</div>
+				</div>
+				<div class="row justify-content-md-center">
+					<button id="confirmRoadTrip" class="btn btn-primary btn-lg btn-start-stop"><a href="index.html">Confirm and Return Home</a></button>
 				</div>
 			</div>			
 		</div>
@@ -247,22 +253,6 @@
 		</div>
 		<!-- End of modal for vehicle -->
 
-		<!-- Modal for trip details -->
-		<div class="trip-modal">
-			<div class="trip-modal-info">
-				<div class="close-bar">
-					&times;
-				</div>
-				<div id="tripDetailsModalContent" class="trip-info-popup">
-	
-				</div>
-				<div class="col-12 close-modal-btn"> 
-					<button class="btn btn-block btn-danger" id="closeTripDetails">Close</button>
-				</div>
-			</div>
-		</div>
-		<!-- End of modal for trip details -->
-
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<!-- From Jquery UI (Needed instead of the bootstrap version). Always start with jquery as everything else is dependant upon jquery -->
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -273,5 +263,6 @@
 		<!-- Optional JavaScript. Finish with your script as this will be modifying the other js files -->
 		<script src="js/config.json"></script>
 		<script src="js/script.js"></script>
+
 	</body>
 </html>

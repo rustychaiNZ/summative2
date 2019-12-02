@@ -11,8 +11,8 @@ script.src = 'https://maps.googleapis.com/maps/api/js?key=' + myKey[0].key + '&c
 // Appending to the body of index.html
 document.getElementsByTagName('body')[0].appendChild(script);
 
-// Car array
-var vehicles = [
+// Vehicle array
+let vehicles = [
 	{
 		id : 101,
 		make : 'Suzuki',
@@ -75,6 +75,12 @@ var vehicles = [
 	}
 ];
 
+// Hides all sections till preseeding button is pressed
+$('#groupDetailsScreen').hide();
+$('#vehicleSelectScreen').hide();
+$('#plotCourseScreen').hide();
+$('#bookTripScreen').hide();
+
 /* 
 	* User's inputs are recorded in this object 
 	* Variables being used:
@@ -84,7 +90,11 @@ var vehicles = [
 		* tDistance - taken from the calculateTotalDistanceTime function
 		* tTime - taken from the calculateTotalDistanceTime function
 */
-var userDetails = {};
+let userDetails = {};
+
+$('#startRentalProcess').on('click', function(){
+	$('#groupDetailsScreen').show();
+});
 
 /* 
 	* Date pickers
@@ -140,8 +150,8 @@ $('#submitPartyDetailsBtn').click(function(){
 	clearCards();
 	rentalLength();
 	groupSizeCalculator();
-	console.log(userDetails);
 	filterCars();
+	$('#vehicleSelectScreen').show();
 });
 
 // Group Size function
@@ -184,7 +194,7 @@ function filterCars(){
 			displayCard(j);
 		}
 		else if((userDetails.noOfDays > 10) && (userDetails.groupSize < 2)){
-			document.getElementById('vehicleCard').innerHTML += '<h2 class="display-2">No Vehilces Are avalible for your specification</h2>'
+			document.getElementById('vehicleCard').innerHTML += '<h2 class="display-2">No Vehilces Are avalible for your specification</h2>';
 			break;
 		}
 	}
@@ -204,14 +214,16 @@ function selctVehicle(){
 			if(this.id == vehicles[i].id){
 				// Adds a class to the selected car to show the user that they have selected a particular car
 				$(this).addClass('selected-vehicle');
+				// Stores vehicle picked from array as it's own object
+				let merge = Object.assign(userDetails, vehicles[i]);
 			}
 		}
-		// Adds the selected vehicle to the userDetails object
-		userDetails.selectedVehicle = this.id;
-		// Used for trouble shooting
-		console.log(userDetails);
 	});
 }
+
+$('#vehicleSubmitBtn').on('click', function(){
+	$('#plotCourseScreen').show();
+});
 
 // Modal information
 function displayVehicleModal(i){
@@ -271,8 +283,6 @@ function displayVehicleModal(i){
 // Function to open the vehicle modal
 function openVehicleInfo(){
 	$('.btn-cards').on('click', function(){
-		// Shows the id of the vehicle that was clicked in the console, used for trouble shooting 
-		console.log(this.id);
 		// Reveals the modal that the information is going to be shown in 
 		$('.vehicle-modal').show();
 		// Makes the background of the modal freeze in place
@@ -288,8 +298,6 @@ function openVehicleInfo(){
 
 	// This allows the user to be able to close the modal by hitting the 'x' in the top right of the modal
 	$('.close-bar').on('click', function() {
-		// Used for trouble shooting to make sure that the button press was being recorded
-		console.log('Close Modal');
 		// After the user closes the modal, the background becomes unfrozen
 		$('body').removeClass('no-scroll');
 		// Hides the modal on clicking the button
@@ -305,6 +313,90 @@ function openVehicleInfo(){
 	});
 }
 
+// Trip details read out
+function bookTripSection(){
+	document.getElementById('tripDetailsReadOut').innerHTML = 
+	// Number of days that the vehicle is being rented
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Number of Days rented</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.noOfDays + '</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>' +
+	// Total rental cost
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Total Rental Cost</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>$' + userDetails.totalRentalCost + ' for ' + userDetails.noOfDays + ' day(s)</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>'+
+	// Number of people in the group
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Group Size</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.groupSize + ' person(s)</h4>' +
+		'</div>' +
+		'<hr>' + 
+	'</div>' +
+	// Car selected
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Vehicle Selected</b>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.make + ' ' + userDetails.model + '</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>' +
+	// Total distance Traveling
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Total Distance</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.tDistance + 'km</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>'+
+	// Total time traveling
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Total Time</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.tTime + ' hours spent driving approximately</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>'+
+	// Aproximate petrol used
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Aproximate Petrol Used</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>' + userDetails.aproxPetrolConsumption + '/L</h4>' +
+		'</div>' +
+		'<hr>' +
+	'</div>';
+}
+
+// Book trip and hide all other sections
+$('#bookTripBtn').on('click', function(){
+	bookTripSection();
+	$('#bookTripScreen').show();
+	$('#titleScreen').hide();
+	$('#groupDetailsScreen').hide();
+	$('#vehicleSelectScreen').hide();
+	$('#plotCourseScreen').fadeOut();
+});
 
 var map;
 function initMap() {
@@ -321,6 +413,9 @@ function initMap() {
 	document.getElementById('plotCourseBtn').addEventListener('click', function() {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
 		$('.directions-panel').show();
+		// Calculates the aproximate costs for renting the vehicle
+		calculateCosts();
+		console.log(userDetails);
 	});
 }
 
@@ -347,12 +442,10 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 	function(response, status) {
 		if (status === 'OK') {
 
-			console.log(response);
 
 			directionsRenderer.setDirections(response);
 			var route = response.routes[0];
 
-			console.log(route);
 
 			var summaryPanel = document.getElementById('directionsPanel');
 			summaryPanel.innerHTML = '';
@@ -385,20 +478,20 @@ function calculateTotalDistanceTime(result){
 		totalTime += userRoute.legs[i].duration.value;
 	}
 	// Converts distance from meters to kilometers
-	totalDist = (totalDist/1000).toFixed(2);
+	totalDist = parseInt(totalDist / 1000);
 	// Converts time from seconds to minutes
-	totalTime = (totalTime/60).toFixed(2);
-	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total time ' + totalTime + ' Minutes</b></p>'
+	totalTime = parseFloat((totalTime / 60 / 60).toFixed(2));
+	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total time ' + totalTime + ' Minutes</b></p>';
 
 	// Adds total distance traveled to userDetails object
 	userDetails.tDistance = totalDist;
 	// Adds total time spent travalling to userDetails object
 	userDetails.tTime = totalTime;
 }
-
-$('#bookTripBtn').on('click', function(){
-	console.log(userDetails);
-});
-
-
-
+// Works out the aproximate cost for petrol
+function calculateCosts(){
+	// Calclulate aproximate petrol cost
+	userDetails.aproxPetrolConsumption = userDetails.fuelConsumption * (userDetails.tDistance / 100).valueOf();
+	// Calculates total rental cost
+	userDetails.totalRentalCost = userDetails.costPerDay * userDetails.noOfDays;
+}

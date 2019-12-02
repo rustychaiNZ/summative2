@@ -1,2 +1,4 @@
 .DS_Store
 js/config.json
+js/big.min.js
+js/big.js

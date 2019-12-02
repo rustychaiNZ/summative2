@@ -93,6 +93,9 @@
 .section {
   min-height: 100vh; }
 
+.landing-page {
+  padding-top: 15vh !important; }
+
 .row {
   margin: 0; }
 
@@ -125,6 +128,16 @@
 .img-filler {
   min-height: 100vh;
   display: block; }
+
+#confirmRoadTrip {
+  margin-top: 3%; }
+
+#tripDetailsReadOut {
+  border-radius: 3px;
+  padding: 15px;
+  margin-top: 5vh;
+  min-height: 20vh;
+  box-shadow: 5px 5px 15px #333; }
 
 #startRentalProcess {
   margin-top: 10%; }
