@@ -80,6 +80,9 @@ var vehicles = [
 	* Variables being used:
 		* noOfDays - taken from rentalLength function
 		* groupSize - taken from groupSizeCalculator function
+		* selectedVehicle - taken from selctVehicle function
+		* tDistance - taken from the calculateTotalDistanceTime function
+		* tTime - taken from the calculateTotalDistanceTime function
 */
 var userDetails = {};
 
@@ -193,6 +196,8 @@ function filterCars(){
 // Making a selction of vehicle. Gives the user feedback to show them that the car has been selected
 function selctVehicle(){
 	$('.select-car-btn').on('click', function(){
+		// Removes highlight off curent selected car
+		$('.select-car-btn').removeClass('selected-vehicle');
 		// Loops through all of the the cars in the array
 		for(var i=0; i<vehicles.length; i++){
 			// Matches the car selected id to the id in the array
@@ -353,21 +358,47 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 			summaryPanel.innerHTML = '';
 			// For each route, display summary information.
 			for (var i = 0; i < route.legs.length; i++) {
-				// var routeSegment = i + 1;
-				// summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +'</b><br>';
-				// summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-				// summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-				// summaryPanel.innerHTML += route.legs[i].distance.text + '<br>'; 
-				// summaryPanel.innerHTML += route.legs[i].duration.text + '<br>';
+				var routeSegment = i + 1;
+				summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +'</b><br>';
+				summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+				summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+				summaryPanel.innerHTML += route.legs[i].distance.text + '<br>'; 
+				summaryPanel.innerHTML += route.legs[i].duration.text + '<br>';
 				var distance = route.legs[i].distance.text;
 
-				summaryPanel.innerHTML = '<b>Total Distance for trip is:' +  + '</b>';
+				// summaryPanel.innerHTML = '<b>Total Distance for trip is:' +  + '</b>';
 			}
+			calculateTotalDistanceTime(response);
 		} else {
 			window.alert('Directions request failed due to ' + status);
 		}
 	});
 }
+
+function calculateTotalDistanceTime(result){
+	var totalDist = 0;
+	var totalTime = 0;
+
+	var userRoute = result.routes[0];
+	for(var i=0; i<userRoute.legs.length; i++){
+		totalDist += userRoute.legs[i].distance.value;
+		totalTime += userRoute.legs[i].duration.value;
+	}
+	// Converts distance from meters to kilometers
+	totalDist = (totalDist/1000).toFixed(2);
+	// Converts time from seconds to minutes
+	totalTime = (totalTime/60).toFixed(2);
+	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total time ' + totalTime + ' Minutes</b></p>'
+
+	// Adds total distance traveled to userDetails object
+	userDetails.tDistance = totalDist;
+	// Adds total time spent travalling to userDetails object
+	userDetails.tTime = totalTime;
+}
+
+$('#bookTripBtn').on('click', function(){
+	console.log(userDetails);
+});
 
 
 

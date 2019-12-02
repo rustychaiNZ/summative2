@@ -26,7 +26,7 @@
 	a{
 		text-decoration: none;
 		color: inherit;
-	}
+	} 
 }
 .stops-container{
 	max-height: 23vh;
@@ -34,6 +34,9 @@
 	padding: 10px 35px;
 	overflow: auto;
 	font-size: 1.3em;
+	p{
+		margin-bottom: 0;
+	}
 }
 .directions-panel{
 	max-height: 25vh;
