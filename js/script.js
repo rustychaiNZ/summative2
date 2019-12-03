@@ -92,6 +92,8 @@ $('#bookTripScreen').hide();
 */
 let userDetails = {};
 
+var petrolCostPerL = 2.20;
+
 $('#startRentalProcess').on('click', function(){
 	$('#groupDetailsScreen').show();
 });
@@ -385,11 +387,24 @@ function bookTripSection(){
 			'<h4>' + userDetails.aproxPetrolConsumption + '/L</h4>' +
 		'</div>' +
 		'<hr>' +
+	'</div>' +
+	// Aproximate petrol cost
+	'<div class="row">' +
+		'<div class="col-6">' +
+			'<h4><b>Aproximate Petrol Cost</b></h4>' +
+		'</div>' +
+		'<div class="col-6">' +
+			'<h4>$' + ((userDetails.aproxPetrolConsumption * petrolCostPerL).toFixed(2)) + ' total</h4>' +
+		'</div>' +
+		'<hr>' +
 	'</div>';
 }
 
 // Book trip and hide all other sections
 $('#bookTripBtn').on('click', function(){
+	console.log(userDetails);
+	// Calculates the aproximate costs for renting the vehicle
+	calculateCosts();
 	bookTripSection();
 	$('#bookTripScreen').show();
 	$('#titleScreen').hide();
@@ -413,8 +428,6 @@ function initMap() {
 	document.getElementById('plotCourseBtn').addEventListener('click', function() {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
 		$('.directions-panel').show();
-		// Calculates the aproximate costs for renting the vehicle
-		calculateCosts();
 		console.log(userDetails);
 	});
 }
@@ -441,12 +454,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 	}, 
 	function(response, status) {
 		if (status === 'OK') {
-
-
 			directionsRenderer.setDirections(response);
 			var route = response.routes[0];
-
-
 			var summaryPanel = document.getElementById('directionsPanel');
 			summaryPanel.innerHTML = '';
 			// For each route, display summary information.
@@ -481,7 +490,7 @@ function calculateTotalDistanceTime(result){
 	totalDist = parseInt(totalDist / 1000);
 	// Converts time from seconds to minutes
 	totalTime = parseFloat((totalTime / 60 / 60).toFixed(2));
-	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total time ' + totalTime + ' Minutes</b></p>';
+	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total approximate driving time ' + totalTime + ' Hours</b></p>';
 
 	// Adds total distance traveled to userDetails object
 	userDetails.tDistance = totalDist;
@@ -491,7 +500,7 @@ function calculateTotalDistanceTime(result){
 // Works out the aproximate cost for petrol
 function calculateCosts(){
 	// Calclulate aproximate petrol cost
-	userDetails.aproxPetrolConsumption = userDetails.fuelConsumption * (userDetails.tDistance / 100).valueOf();
+	userDetails.aproxPetrolConsumption = (userDetails.fuelConsumption * (userDetails.tDistance / 100)).toFixed(2);
 	// Calculates total rental cost
 	userDetails.totalRentalCost = userDetails.costPerDay * userDetails.noOfDays;
 }

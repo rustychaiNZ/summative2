@@ -81,71 +81,6 @@
 .selected-vehicle {
   background-color: red; }
 
-* {
-  scroll-behavior: smooth; }
-
-.date-picker {
-  width: 270px; }
-
-.date-picker-container {
-  margin: 0 15% 50px 0; }
-
-.section {
-  min-height: 100vh; }
-
-.landing-page {
-  padding-top: 15vh !important; }
-
-.row {
-  margin: 0; }
-
-.margin-auto {
-  margin: auto; }
-
-.submit-btn {
-  margin-top: 25px; }
-
-.btn a {
-  text-decoration: none;
-  color: inherit; }
-
-.stops-container {
-  max-height: 23vh;
-  margin-bottom: 10px;
-  padding: 10px 35px;
-  overflow: auto;
-  font-size: 1.3em; }
-  .stops-container p {
-    margin-bottom: 0; }
-
-.directions-panel {
-  max-height: 25vh;
-  padding: 10px;
-  margin-top: 15px;
-  display: none;
-  overflow: auto; }
-
-.img-filler {
-  min-height: 100vh;
-  display: block; }
-
-#confirmRoadTrip {
-  margin-top: 3%; }
-
-#tripDetailsReadOut {
-  border-radius: 3px;
-  padding: 15px;
-  margin-top: 5vh;
-  min-height: 20vh;
-  box-shadow: 5px 5px 15px #333; }
-
-#startRentalProcess {
-  margin-top: 10%; }
-
-#map {
-  min-height: 100vh;
-  margin: 0 -15px; }
-
 #vehiclSelectImg {
   min-height: 100vh;
   width: 100%;
@@ -264,5 +199,89 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
+* {
+  scroll-behavior: smooth; }
+
+.date-picker {
+  width: 270px; }
+
+.date-picker-container {
+  margin: 0 15% 50px 0; }
+
+.section {
+  min-height: 100vh; }
+
+.landing-page {
+  padding-top: 15vh !important; }
+
+.row {
+  margin: 0; }
+
+.margin-auto {
+  margin: auto; }
+
+.btn-primary {
+  background-color: #d7a130 !important;
+  color: #1c2430 !important;
+  border-color: #d7a130 !important; }
+
+.btn-primary:hover {
+  background-color: #a37921 !important;
+  border-color: #a37921 !important;
+  color: #1c2430; }
+
+.btn-primary:active, .btn-primary:focus {
+  background-color: #d7a130 !important;
+  color: #1c2430 !important;
+  border-color: #d7a130 !important;
+  box-shadow: 0px 0px 5px #333 !important; }
+
+.submit-btn {
+  margin-top: 25px; }
+
+.btn a {
+  text-decoration: none;
+  color: inherit; }
+
+.stops-container {
+  max-height: 23vh;
+  margin-bottom: 10px;
+  padding: 10px 35px;
+  overflow: auto;
+  font-size: 1.3em; }
+  .stops-container p {
+    margin-bottom: 0; }
+
+.directions-panel {
+  max-height: 25vh;
+  padding: 10px;
+  margin-top: 15px;
+  display: none;
+  overflow: auto; }
+
+.img-filler {
+  min-height: 100vh;
+  display: block; }
+
+#confirmRoadTrip {
+  margin-top: 3%; }
+
+#tripDetailsReadOut {
+  border-radius: 3px;
+  padding: 15px;
+  margin-top: 5vh;
+  min-height: 20vh;
+  box-shadow: 5px 5px 15px #333; }
+
+#total p {
+  margin: 10px !important; }
+
+#startRentalProcess {
+  margin-top: 10%; }
+
+#map {
+  min-height: 100vh;
+  margin: 0 -15px; }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -1,3 +1,19 @@
+// --- Shadows ---
 @mixin shadow-dark{
 	box-shadow: 5px 5px 15px #333;
+}
+
+// --- Colors ---
+@mixin btn-primary{
+	background-color: #d7a130 !important;
+	color: #1c2430 !important;
+	border-color: #d7a130 !important;
+}
+@mixin btn-primary-shadow{
+	box-shadow: 0px 0px 5px #333 !important;
+}
+@mixin btn-primary-hover{
+	background-color: #a37921 !important;
+	border-color: #a37921 !important;
+	color: #1c2430;
 }
