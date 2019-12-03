@@ -75,11 +75,11 @@ let vehicles = [
 	}
 ];
 
-// Hides all sections till preseeding button is pressed
-$('#groupDetailsScreen').hide();
-$('#vehicleSelectScreen').hide();
-$('#plotCourseScreen').hide();
-$('#bookTripScreen').hide();
+// -------------- Hides all sections till preseeding button is pressed --------------
+// $('#groupDetailsScreen').hide();
+// $('#vehicleSelectScreen').hide();
+// $('#plotCourseScreen').hide();
+// $('#bookTripScreen').hide();
 
 /* 
 	* User's inputs are recorded in this object 

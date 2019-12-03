@@ -207,7 +207,7 @@
   width: 270px; }
 
 .date-picker-container {
-  margin: 0 15% 50px 0; }
+  margin: 0 15% 15% 0; }
 
 .section {
   min-height: 100vh; }
@@ -283,5 +283,16 @@
 #map {
   min-height: 100vh;
   margin: 0 -15px; }
+
+@media only screen and (max-width: 992px) {
+  #groupDetailsImg {
+    min-height: 45vh; }
+
+  .date-picker {
+    width: 100%; }
+
+  .date-picker-container {
+    width: 100%;
+    margin: 3% 1%; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
