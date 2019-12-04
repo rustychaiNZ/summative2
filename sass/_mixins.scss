@@ -2,18 +2,38 @@
 @mixin shadow-dark{
 	box-shadow: 5px 5px 15px #333;
 }
+@mixin btn-shadow{
+	box-shadow: 0px 0px 5px #333 !important;
+}
 
 // --- Colors ---
-@mixin btn-primary{
+@mixin primary-color{
 	background-color: #d7a130 !important;
 	color: #1c2430 !important;
 	border-color: #d7a130 !important;
 }
-@mixin btn-primary-shadow{
-	box-shadow: 0px 0px 5px #333 !important;
-}
-@mixin btn-primary-hover{
+@mixin primary-color-hover{
 	background-color: #a37921 !important;
 	border-color: #a37921 !important;
 	color: #1c2430;
+}
+@mixin secondary-color{
+	background-color: #1c2430;
+	border-color: #015e8c;
+	color: #ffffed;
+}
+@mixin secondary-color-hover{
+	background-color: #24344d !important;
+	border-color: #026da4 !important;
+	color: #ffffed !important;
+}
+@mixin selected-car{
+	background-color: #879e1a;
+	border-color: #879e1a;
+	color: #ffffed;
+}
+@mixin selected-car-hover{
+	background-color: #296902 !important;
+	border-color: #296902 !important;
+	color: #ffffed !important;
 }

@@ -25,8 +25,9 @@
   text-align: right;
   padding: 0 20px;
   cursor: pointer;
-  background-color: #272f38;
-  color: #edf1f7; }
+  background-color: #1c2430;
+  border-color: #015e8c;
+  color: #ffffed; }
 
 .close-bar:hover {
   color: black; }
@@ -65,7 +66,7 @@
 
 .vehicle-card {
   width: 30vw;
-  margin: 10px 35px; }
+  margin: 5px 35px; }
 
 .vehicle-card:hover {
   box-shadow: 5px 5px 15px darkgrey;
@@ -74,12 +75,6 @@
 .car-card-thumbnail {
   height: 25vh;
   width: 100%; }
-
-.btn-cards {
-  margin: 5px 5px; }
-
-.selected-vehicle {
-  background-color: red; }
 
 #vehiclSelectImg {
   min-height: 100vh;
@@ -200,27 +195,6 @@
   background-size: cover;
   background-position: center; }
 
-* {
-  scroll-behavior: smooth; }
-
-.date-picker {
-  width: 270px; }
-
-.date-picker-container {
-  margin: 0 15% 15% 0; }
-
-.section {
-  min-height: 100vh; }
-
-.landing-page {
-  padding-top: 15vh !important; }
-
-.row {
-  margin: 0; }
-
-.margin-auto {
-  margin: auto; }
-
 .btn-primary {
   background-color: #d7a130 !important;
   color: #1c2430 !important;
@@ -237,12 +211,87 @@
   border-color: #d7a130 !important;
   box-shadow: 0px 0px 5px #333 !important; }
 
+.btn-secondary {
+  background-color: #1c2430;
+  border-color: #015e8c;
+  color: #ffffed; }
+
+.btn-secondary:hover {
+  background-color: #24344d !important;
+  border-color: #026da4 !important;
+  color: #ffffed !important; }
+
+.btn-secondary:active, .btn-secondary:focus {
+  background-color: #1c2430;
+  border-color: #015e8c;
+  color: #ffffed;
+  box-shadow: 0px 0px 5px #333 !important; }
+
+.selected-vehicle {
+  background-color: #879e1a;
+  border-color: #879e1a;
+  color: #ffffed; }
+
+.selected-vehicle:hover {
+  background-color: #296902 !important;
+  border-color: #296902 !important;
+  color: #ffffed !important; }
+
+.selected-vehicle:active, .selected-vehicle:focus {
+  background-color: #879e1a;
+  border-color: #879e1a;
+  color: #ffffed;
+  box-shadow: 0px 0px 5px #333 !important; }
+
 .submit-btn {
   margin-top: 25px; }
+
+.btn-cards {
+  margin: 5px 5px; }
+
+#confirmRoadTrip {
+  margin: 3% auto; }
+
+#startRentalProcess {
+  margin-top: 3%; }
 
 .btn a {
   text-decoration: none;
   color: inherit; }
+
+* {
+  scroll-behavior: smooth; }
+
+h3 {
+  font-size: 3rem; }
+
+.site-logo {
+  width: 15vw;
+  display: block;
+  position: absolute;
+  top: 2%;
+  left: 3%; }
+
+.heading-underline {
+  border: 2px solid #1c2430; }
+
+.date-picker {
+  width: 270px; }
+
+.date-picker-container {
+  margin: 0 2% 15% 0; }
+
+.section {
+  min-height: 100vh; }
+
+.landing-page {
+  padding-top: 20vh; }
+
+.row {
+  margin: 0; }
+
+.margin-auto {
+  margin: auto; }
 
 .stops-container {
   max-height: 23vh;
@@ -254,7 +303,7 @@
     margin-bottom: 0; }
 
 .directions-panel {
-  max-height: 25vh;
+  max-height: 23vh;
   padding: 10px;
   margin-top: 15px;
   display: none;
@@ -264,21 +313,14 @@
   min-height: 100vh;
   display: block; }
 
-#confirmRoadTrip {
-  margin: 3% auto; }
-
 #tripDetailsReadOut {
   border-radius: 3px;
   padding: 15px;
   margin-top: 5vh;
-  min-height: 20vh;
   box-shadow: 5px 5px 15px #333; }
 
 #total p {
   margin: 10px !important; }
-
-#startRentalProcess {
-  margin-top: 10%; }
 
 #map {
   min-height: 100vh;
@@ -288,6 +330,9 @@
   .vehicle-card {
     margin: 1%; } }
 @media only screen and (max-width: 991px) {
+  h3 {
+    font-size: 2rem; }
+
   .submit-btn {
     margin-bottom: 1%; }
 
@@ -297,6 +342,15 @@
   .display-4 {
     font-size: 2.75rem; }
 
+  .site-logo {
+    width: 40vw;
+    display: block;
+    margin: 5% auto;
+    position: relative; }
+
+  .landing-page {
+    padding-top: 15vh; }
+
   #groupDetailsImg {
     min-height: 45vh; }
 
@@ -305,6 +359,9 @@
 
   .date-picker-container {
     margin: 3% 1%; }
+
+  #vehiclSelectImg {
+    display: none; }
 
   #vehiclSelectImg {
     min-height: 40vh;
@@ -343,6 +400,12 @@
       font-size: 1.1rem; }
 
   .car-modal-thumbnail {
-    height: 60vh; } }
+    height: 60vh; }
+
+  #tripDetailsReadOut {
+    margin-top: 2.5vh; }
+
+  #confirmRoadTrip {
+    margin-top: 4%; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -28,8 +28,7 @@
 	text-align: right;
 	padding: 0 20px;
 	cursor: pointer;
-	background-color: #272f38;
-	color: #edf1f7;
+	@include secondary-color;
 }
 .close-bar:hover{
 	color: black;

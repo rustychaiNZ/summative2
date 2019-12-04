@@ -1,0 +1,51 @@
+// Styles
+.btn-primary{
+	@include primary-color;
+}
+.btn-primary:hover{
+	@include primary-color-hover;
+}
+.btn-primary:active, .btn-primary:focus{
+	@include primary-color;
+	@include btn-shadow;
+}
+.btn-secondary{
+	@include secondary-color;
+}
+.btn-secondary:hover{
+	@include secondary-color-hover;
+}
+.btn-secondary:active, .btn-secondary:focus{
+	@include secondary-color;
+	@include btn-shadow;
+}
+.selected-vehicle{
+	@include selected-car;
+}
+.selected-vehicle:hover{
+	@include selected-car-hover;
+}
+.selected-vehicle:active, .selected-vehicle:focus{
+	@include selected-car;
+	@include btn-shadow;
+}
+// Positioning
+.submit-btn{
+	margin-top: 25px;
+}
+.btn-cards{
+	margin: 5px 5px;
+}
+#confirmRoadTrip{
+	margin: 3% auto;
+}
+#startRentalProcess{
+	margin-top: 3%;
+}
+// Misc
+.btn{
+	a{
+		text-decoration: none;
+		color: inherit;
+	} 
+}

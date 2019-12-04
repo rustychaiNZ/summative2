@@ -1,21 +1,35 @@
+@import 'mixins';
 @import 'modals';
 @import 'vehicleCard';
-@import 'mixins';
 @import 'images';
+@import 'buttons';
 *{
 	scroll-behavior: smooth;
+}
+h3{
+	font-size: 3rem;
+}
+.site-logo{
+	width: 15vw;
+	display: block;
+	position: absolute;
+	top: 2%;
+	left: 3%;
+}
+.heading-underline{
+	border: 2px solid #1c2430;
 }
 .date-picker{
 	width: 270px;
 }
 .date-picker-container{
-	margin: 0 15% 15% 0;
+	margin: 0 2% 15% 0;
 }
 .section{
 	min-height: 100vh;
 }
 .landing-page{
-	padding-top: 15vh !important;
+	padding-top: 20vh;
 }
 .row{
 	margin: 0;
@@ -24,25 +38,6 @@
 	margin: auto;
 }
 
-.btn-primary{
-	@include btn-primary;
-}
-.btn-primary:hover{
-	@include btn-primary-hover;
-}
-.btn-primary:active, .btn-primary:focus{
-	@include btn-primary;
-	@include btn-primary-shadow;
-}
-.submit-btn{
-	margin-top: 25px;
-}
-.btn{
-	a{
-		text-decoration: none;
-		color: inherit;
-	} 
-}
 .stops-container{
 	max-height: 23vh;
 	margin-bottom: 10px;
@@ -54,7 +49,7 @@
 	}
 }
 .directions-panel{
-	max-height: 25vh;
+	max-height: 23vh;
 	padding: 10px;
 	margin-top: 15px;
 	display: none;
@@ -66,15 +61,10 @@
 	display: block;
 }
 
-#confirmRoadTrip{
-	margin: 3% auto;
-}
-
 #tripDetailsReadOut{
 	border-radius: 3px;
 	padding: 15px;
 	margin-top: 5vh;
-	min-height: 20vh;
 	@include shadow-dark;
 }
 #total{
@@ -83,9 +73,6 @@
 	}
 }
 
-#startRentalProcess{
-	margin-top: 10%;
-}
 #map{
 	min-height: 100vh;
 	margin: 0 -15px;

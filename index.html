@@ -22,6 +22,7 @@
 				<div class="text-center align-middle">
 					<h1 class="display-1">Tourism New Zealand Presents</h1>
 					<h2 class="display-4">The Great Kiwi Road Trip</h2>
+					<img src="assets/tourismNZLogo.jpg" class="site-logo">
 					<button class="btn btn-lg btn-primary btn-start-stop" id="startRentalProcess"><a href="#groupDetailsScreen">Start Your Journey</a></button>
 				</div>
 			</div>
@@ -38,7 +39,7 @@
 				<!-- Form Container -->
 				<div class="col-lg-6">
 					<h3>Group Details</h3>
-					<hr>
+					<hr class="heading-underline">
 					
 					<h4>Select Dates</h4>
 					<!-- Select start date -->
@@ -46,12 +47,12 @@
 						<!-- Starting date -->
 						<div class="date-picker-container col-lg">
 							<label for="startDate">Pick Up (YYYY-MM-DD)</label>
-							<input type="text" id="startDate" size="30" class="form-control date-picker" required>
+							<input type="text" id="startDate" size="30" class="form-control date-picker" autocomplete="off" required>
 						</div>
 						<!-- Ending date -->
 						<div class="date-picker-container col-lg">
 							<label for="endDate">Drop Off (YYYY-MM-DD)</label>
-							<input type="text" id="endDate" size="30" class="form-control date-picker" required>
+							<input type="text" id="endDate" size="30" class="form-control date-picker" autocomplete="off" required>
 						</div>
 					</div>
 					<h4>Group Size</h4>
@@ -86,7 +87,7 @@
 				<!-- Form Container -->
 				<div class="col-lg-9">
 					<h3>Pick Vehicle</h3>
-					<hr>
+					<hr class="heading-underline">
 					<!-- Car cards -->
 					<div class="row align-items-center justify-content-md-center" id="vehicleCard">
 						<!-- Vehicles cars are dynamically added here -->
@@ -111,7 +112,7 @@
 				<!-- Form container -->
 				<div class="col-lg-4">
 					<h3>Plot Course</h3>
-					<hr>
+					<hr class="heading-underline">
 					<!-- Selection starting input -->
 					<label for="startingInput">Starting Location</label>
 					<select id="startingInput" class="form-control">
@@ -127,69 +128,71 @@
 					<label for="stopCheckboxes">Popular Stops:</label>
 					<!-- Checkbox container -->
 					<div id="checkboxLocations" class="stops-container bg-white form-check">
-						<!-- Invercargill -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Invercargill">
-						<label for="Invercargill" class="form-check-label">Invercargill</label><br>
-						<!-- Dunedin -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Dunedin">
-						<label for="Dunedin" class="form-check-label">Dunedin</label><br>
-						<!-- Queenstown -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Queenstown">
-						<label for="Queenstown" class="form-check-label">Queenstown</label><br>
-						<!-- Wanaka -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Wanaka">
-						<label for="Wanaka" class="form-check-label">Wanaka</label><br>
-						<!-- Timaru -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Timaru">
-						<label for="Timaru" class="form-check-label">Timaru</label><br>
-						<!-- Christchurch -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Christchurch">
-						<label for="Christchurch" class="form-check-label">Christchurch</label><br>
-						<!-- Greymouth -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Greymouth">
-						<label for="Greymouth" class="form-check-label">Greymouth</label><br>
-						<!-- Blenheim -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Blenheim, New Zealand">
-						<label for="Blenheim" class="form-check-label">Blenheim</label><br>
-						<!-- Picton -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Picton">
-						<label for="Picton" class="form-check-label">Picton</label><br>
-						<!-- Nelson -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Nelson">
-						<label for="Nelson" class="form-check-label">Nelson</label><br>
-						<!-- Wellington -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Wellington">
-						<label for="Wellington" class="form-check-label">Wellington</label><br>
-						<!-- Palmerston North -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North">
-						<label for="Palmerston North" class="form-check-label">Palmerston North</label><br>
-						<!-- New Plymouth -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="New Plymouth, New Zealand" id="stopCheckNewPlymouth">
-						<label for="stopCheckNewPlymouth" class="form-check-label">New Plymouth</label><br>
+						<h5>North Island</h5><hr>
+						<!-- Russell -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Russell, New Zealand">
+						<label for="Russell" class="form-check-label">Russell</label><br>
+						<!-- Auckland -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North, New Zealand" id="Auckland">
+						<label for="Auckland" class="form-check-label">Auckland</label><br>
+						<!-- Hamilton -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Hamilton, New Zealand" id="stopCheckHamilton">
+						<label for="stopCheckHamilton" class="form-check-label">Hamilton</label><br>
+						<!-- Tauranga -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Tauranga, New Zealand" id="stopCheckTauranga">
+						<label for="stopCheckTauranga" class="form-check-label">Tauranga</label><br>
+						<!-- Rotorua -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="-38.136894, 176.248937" id="stopCheckRotorua">
+						<label for="stopCheckRotorua" class="form-check-label">Rotorua</label><br>
 						<!-- Taupo -->
 						<input type="checkbox" name="waypoints" class="form-check-input" value="Taupo" id="stopCheckTaupo">
 						<label for="stopCheckTaupo" class="form-check-label">Taupo</label><br>
 						<!-- Gisborne -->
 						<input type="checkbox" name="waypoints" class="form-check-input" value="Gisborne" id="stopCheckGisborne">
 						<label for="stopCheckGisborne" class="form-check-label">Gisborne</label><br>
+						<!-- New Plymouth -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="New Plymouth, New Zealand" id="stopCheckNewPlymouth">
+						<label for="stopCheckNewPlymouth" class="form-check-label">New Plymouth</label><br>
 						<!-- Napier -->
 						<input type="checkbox" name="waypoints" class="form-check-input" value="Napier">
 						<label for="Napier" class="form-check-label">Napier</label><br>
-						<!-- Rotorua -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="-38.136894, 176.248937" id="stopCheckRotorua">
-						<label for="stopCheckRotorua" class="form-check-label">Rotorua</label><br>
-						<!-- Tauranga -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Tauranga, New Zealand" id="stopCheckTauranga">
-						<label for="stopCheckTauranga" class="form-check-label">Tauranga</label><br>
-						<!-- Hamilton -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Hamilton, New Zealand" id="stopCheckHamilton">
-						<label for="stopCheckHamilton" class="form-check-label">Hamilton</label><br>
-						<!-- Auckland -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North, New Zealand" id="Auckland">
-						<label for="Auckland" class="form-check-label">Auckland</label><br>
-						<!-- Russell -->
-						<input type="checkbox" name="waypoints" class="form-check-input" value="Russell, New Zealand">
-						<label for="Russell" class="form-check-label">Russell</label><br>
+						<!-- Palmerston North -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Palmerston North">
+						<label for="Palmerston North" class="form-check-label">Palmerston North</label><br>
+						<!-- Wellington -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Wellington">
+						<label for="Wellington" class="form-check-label">Wellington</label><br>
+						<h5>South Island</h5><hr>
+						<!-- Nelson -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Nelson">
+						<label for="Nelson" class="form-check-label">Nelson</label><br>
+						<!-- Picton -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Picton">
+						<label for="Picton" class="form-check-label">Picton</label><br>
+						<!-- Blenheim -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Blenheim, New Zealand">
+						<label for="Blenheim" class="form-check-label">Blenheim</label><br>
+						<!-- Greymouth -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Greymouth">
+						<label for="Greymouth" class="form-check-label">Greymouth</label><br>
+						<!-- Christchurch -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Christchurch">
+						<label for="Christchurch" class="form-check-label">Christchurch</label><br>
+						<!-- Timaru -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Timaru">
+						<label for="Timaru" class="form-check-label">Timaru</label><br>
+						<!-- Wanaka -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Wanaka">
+						<label for="Wanaka" class="form-check-label">Wanaka</label><br>
+						<!-- Queenstown -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Queenstown">
+						<label for="Queenstown" class="form-check-label">Queenstown</label><br>
+						<!-- Dunedin -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Dunedin">
+						<label for="Dunedin" class="form-check-label">Dunedin</label><br>
+						<!-- Invercargill -->
+						<input type="checkbox" name="waypoints" class="form-check-input" value="Invercargill">
+						<label for="Invercargill" class="form-check-label">Invercargill</label><br>
 					</div>
 					<!-- Checkbox container end -->
 					<!-- Autofill end input -->
@@ -226,7 +229,7 @@
 			</div>
 				<!-- Script dynamically adds read trip details to div -->
 				<div class="row justify-content-md-center">
-					<div class="col-7 mx-auto bg-white" id="tripDetailsReadOut">
+					<div class="col-lg-7 mx-auto bg-white" id="tripDetailsReadOut">
 						
 					</div>
 				</div>

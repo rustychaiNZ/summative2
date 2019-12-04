@@ -8,6 +8,9 @@
 // Media Query lg
 @media only screen and (max-width: 991px){
 	// Universal selectors
+	h3{
+		font-size: 2rem;
+	}
 	.submit-btn{
 		margin-bottom: 1%; 
 	}
@@ -17,16 +20,28 @@
 	.display-4{
 		font-size: 2.75rem;
 	}
+	// Landing Page
+	.site-logo{
+		width: 40vw;
+		display: block;
+		margin: 5% auto;
+		position: relative;
+	}
+	.landing-page{
+		padding-top: 15vh;
+	}
 	// Group Detials section
 	#groupDetailsImg{
 		min-height: 45vh;
 	}
 	.date-picker{
 		width: 100%;
-		// margin: 0;
 	}
 	.date-picker-container{
 		margin: 3% 1%;
+	}
+	#vehiclSelectImg{
+		display: none;
 	}
 	// Pick vehicle section
 	#vehiclSelectImg{
@@ -40,14 +55,6 @@
 		.vehicle-modal-info{
 			width: 85%;
 			margin: 7% auto;
-			// height: 100vh;
-			h4{
-				// font-size: 1.3rem;
-			}
-			h5{
-				// font-size: 1.1rem;
-			}
-
 		}
 		.car-modal-thumbnail{
 			height: 55vh;
@@ -72,6 +79,7 @@
 		width: 80vw;
 		margin: 1% auto;
 	}
+		// Vehicle Modal
 		.vehicle-modal-info{
 			width: 100%;
 			margin: 0;
@@ -87,4 +95,11 @@
 		.car-modal-thumbnail{
 			height: 60vh;
 		}
+	// Summary Page
+	#tripDetailsReadOut{
+		margin-top: 2.5vh;
+	}
+	#confirmRoadTrip{
+		margin-top: 4%;
+	}
 }

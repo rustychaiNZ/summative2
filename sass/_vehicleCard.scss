@@ -1,6 +1,6 @@
 .vehicle-card{
 	width: 30vw;
-	margin: 10px 35px;
+	margin: 5px 35px;
 }
 .vehicle-card:hover{
 	box-shadow: 5px 5px 15px darkgrey;
@@ -9,10 +9,4 @@
 .car-card-thumbnail{
 	height: 25vh;
 	width: 100%;
-}
-.btn-cards{
-	margin: 5px 5px;
-}
-.selected-vehicle{
-	background-color: red;
 }

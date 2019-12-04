@@ -76,10 +76,10 @@ let vehicles = [
 ];
 
 // -------------- Hides all sections till preseeding button is pressed --------------
-// $('#groupDetailsScreen').hide();
-// $('#vehicleSelectScreen').hide();
-// $('#plotCourseScreen').hide();
-// $('#bookTripScreen').hide();
+$('#groupDetailsScreen').hide();
+$('#vehicleSelectScreen').hide();
+$('#plotCourseScreen').hide();
+$('#bookTripScreen').hide();
 
 /* 
 	* User's inputs are recorded in this object 
@@ -207,7 +207,8 @@ function filterCars(){
 
 // for(var j=0; vehicles.length; j++){
 // 	displayCard(j);
-// 	displayVehicleModal(j);
+// 	openVehicleInfo();
+// 	selctVehicle();
 // }
 
 // Making a selction of vehicle. Gives the user feedback to show them that the car has been selected
@@ -495,6 +496,7 @@ function calculateTotalDistanceTime(result){
 	totalDist = parseInt(totalDist / 1000);
 	// Converts time from seconds to minutes
 	totalTime = parseFloat((totalTime / 60 / 60).toFixed(2));
+	document.getElementById('total').innerHTML = '';
 	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total approximate driving time ' + totalTime + ' Hours</b></p>';
 
 	// Adds total distance traveled to userDetails object
