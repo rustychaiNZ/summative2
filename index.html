@@ -44,12 +44,12 @@
 					<!-- Select start date -->
 					<div class="row">
 						<!-- Starting date -->
-						<div class="date-picker-container">
+						<div class="date-picker-container col-lg">
 							<label for="startDate">Pick Up (YYYY-MM-DD)</label>
 							<input type="text" id="startDate" size="30" class="form-control date-picker" required>
 						</div>
 						<!-- Ending date -->
-						<div class="date-picker-container">
+						<div class="date-picker-container col-lg">
 							<label for="endDate">Drop Off (YYYY-MM-DD)</label>
 							<input type="text" id="endDate" size="30" class="form-control date-picker" required>
 						</div>
@@ -84,7 +84,7 @@
 		<div class="section bg-light" id="vehicleSelectScreen">
 			<div class="row">
 				<!-- Form Container -->
-				<div class="col-9">
+				<div class="col-lg-9">
 					<h3>Pick Vehicle</h3>
 					<hr>
 					<!-- Car cards -->
@@ -95,7 +95,7 @@
 					<button class="btn btn-lg btn-primary float-right submit-btn" id="vehicleSubmitBtn"><a href="#plotCourseScreen">Submit</a></button>
 				</div>
 				<!-- Image container -->
-				<div class="img-filler col-3" id="vehiclSelectImg">
+				<div class="img-filler col-lg-3" id="vehiclSelectImg">
 				</div>
 			</div>
 		</div>
@@ -105,11 +105,11 @@
 		<div class="section bg-light" id="plotCourseScreen">
 			<div class="row">
 				<!-- Map -->
-				<div class="col-8">
+				<div class="col-lg-8">
 					<div id="map"></div>
 				</div>
 				<!-- Form container -->
-				<div class="col-4">
+				<div class="col-lg-4">
 					<h3>Plot Course</h3>
 					<hr>
 					<!-- Selection starting input -->
@@ -207,7 +207,7 @@
 					<div>
 						<button class="btn btn-lg btn-block btn-primary" id="plotCourseBtn">Plot Course</button>
 						<!-- <button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button> -->
-						<button class="btn btn-lg btn-block btn-primary" id="bookTripBtn">Book Trip</button>
+						<button class="btn btn-lg btn-block btn-primary submit-btn" id="bookTripBtn">Book Trip</button>
 					</div>
 					<div id="directionsPanel" class="directions-panel bg-white"></div>
 					<div id="total" class="directions-panel bg-white"></div>

@@ -265,7 +265,7 @@
   display: block; }
 
 #confirmRoadTrip {
-  margin-top: 3%; }
+  margin: 3% auto; }
 
 #tripDetailsReadOut {
   border-radius: 3px;
@@ -284,7 +284,19 @@
   min-height: 100vh;
   margin: 0 -15px; }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1134px) {
+  .vehicle-card {
+    margin: 1%; } }
+@media only screen and (max-width: 991px) {
+  .submit-btn {
+    margin-bottom: 1%; }
+
+  .display-1 {
+    font-size: 3.75rem; }
+
+  .display-4 {
+    font-size: 2.75rem; }
+
   #groupDetailsImg {
     min-height: 45vh; }
 
@@ -292,7 +304,45 @@
     width: 100%; }
 
   .date-picker-container {
+    margin: 3% 1%; }
+
+  #vehiclSelectImg {
+    min-height: 40vh;
+    background-position: center; }
+
+  .vehicle-card {
+    width: 45vw; }
+
+  .vehicle-modal-info {
+    width: 85%;
+    margin: 7% auto; }
+
+  .car-modal-thumbnail {
+    height: 55vh; }
+
+  #map {
+    min-height: 80vh; } }
+@media only screen and (max-width: 520px) {
+  .display-1 {
+    font-size: 3rem; }
+
+  .display-4 {
+    font-size: 2rem; }
+
+  .vehicle-card {
+    width: 80vw;
+    margin: 1% auto; }
+
+  .vehicle-modal-info {
     width: 100%;
-    margin: 3% 1%; } }
+    margin: 0;
+    height: 100vh; }
+    .vehicle-modal-info h4 {
+      font-size: 1.3rem; }
+    .vehicle-modal-info h5 {
+      font-size: 1.1rem; }
+
+  .car-modal-thumbnail {
+    height: 60vh; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

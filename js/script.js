@@ -205,6 +205,11 @@ function filterCars(){
 	selctVehicle();
 }
 
+// for(var j=0; vehicles.length; j++){
+// 	displayCard(j);
+// 	displayVehicleModal(j);
+// }
+
 // Making a selction of vehicle. Gives the user feedback to show them that the car has been selected
 function selctVehicle(){
 	$('.select-car-btn').on('click', function(){
@@ -276,7 +281,7 @@ function displayVehicleModal(i){
 			'<div class="col-8 modal-info_right">' + 
 				'<h5>' + vehicles[i].minCapacity + ' Person(s) to ' + vehicles[i].maxCapacity + '<br>' +
 				'$' + vehicles[i].costPerDay + ' Per Day' + '<br>' +
-				'Petrol Consumption: ' + vehicles[i].fuelConsumption + 'L/100km' +
+				'Petrol Consumption: ' + vehicles[i].fuelConsumption + 'L/100km' + '</h5>' +
 			'</div>' +
 		'</div>' +
 	'</div>';
