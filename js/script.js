@@ -406,7 +406,7 @@ $('#bookTripBtn').on('click', function(){
 	// Calculates the aproximate costs for renting the vehicle
 	calculateCosts();
 	bookTripSection();
-	$('#bookTripScreen').show();
+	$('#bookTripScreen').fadeIn();
 	$('#titleScreen').hide();
 	$('#groupDetailsScreen').hide();
 	$('#vehicleSelectScreen').hide();

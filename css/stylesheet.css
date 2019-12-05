@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:700|Raleway:500&display=swap");
+* {
+  font-family: 'Raleway', sans-serif; }
+
+h1, h2, h3 {
+  font-family: 'Amatic SC', cursive; }
+
 .vehicle-modal {
   z-index: 98;
   width: 100%;
@@ -26,7 +33,7 @@
   padding: 0 20px;
   cursor: pointer;
   background-color: #1c2430;
-  border-color: #015e8c;
+  border-color: #1c2430;
   color: #ffffed; }
 
 .close-bar:hover {
@@ -213,17 +220,17 @@
 
 .btn-secondary {
   background-color: #1c2430;
-  border-color: #015e8c;
+  border-color: #1c2430;
   color: #ffffed; }
 
 .btn-secondary:hover {
   background-color: #24344d !important;
-  border-color: #026da4 !important;
+  border-color: #24344d !important;
   color: #ffffed !important; }
 
 .btn-secondary:active, .btn-secondary:focus {
   background-color: #1c2430;
-  border-color: #015e8c;
+  border-color: #1c2430;
   color: #ffffed;
   box-shadow: 0px 0px 5px #333 !important; }
 

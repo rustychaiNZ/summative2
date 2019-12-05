@@ -8,32 +8,32 @@
 
 // --- Colors ---
 @mixin primary-color{
-	background-color: #d7a130 !important;
-	color: #1c2430 !important;
-	border-color: #d7a130 !important;
+	background-color: $primary-yellow !important;
+	color: $primary-grey!important;
+	border-color: $primary-yellow !important;
 }
 @mixin primary-color-hover{
-	background-color: #a37921 !important;
-	border-color: #a37921 !important;
-	color: #1c2430;
+	background-color: $primary-yellow-hover !important;
+	border-color: $primary-yellow-hover !important;
+	color: $primary-grey;
 }
 @mixin secondary-color{
-	background-color: #1c2430;
-	border-color: #015e8c;
-	color: #ffffed;
+	background-color: $primary-grey;
+	border-color: $primary-grey;
+	color: $primar-white;
 }
 @mixin secondary-color-hover{
-	background-color: #24344d !important;
-	border-color: #026da4 !important;
-	color: #ffffed !important;
+	background-color: $secondary-grey-hover !important;
+	border-color: $secondary-grey-hover !important;
+	color: $primar-white !important;
 }
 @mixin selected-car{
-	background-color: #879e1a;
-	border-color: #879e1a;
-	color: #ffffed;
+	background-color: $primary-green;
+	border-color: $primary-green;
+	color: $primar-white;
 }
 @mixin selected-car-hover{
-	background-color: #296902 !important;
-	border-color: #296902 !important;
-	color: #ffffed !important;
+	background-color: $primary-green-hover !important;
+	border-color: $primary-green-hover !important;
+	color: $primar-white !important;
 }
