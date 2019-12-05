@@ -205,12 +205,6 @@ function filterCars(){
 	selctVehicle();
 }
 
-// for(var j=0; vehicles.length; j++){
-// 	displayCard(j);
-// 	openVehicleInfo();
-// 	selctVehicle();
-// }
-
 // Making a selction of vehicle. Gives the user feedback to show them that the car has been selected
 function selctVehicle(){
 	$('.select-car-btn').on('click', function(){
