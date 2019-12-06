@@ -90,7 +90,10 @@ $('#bookTripScreen').hide();
 		* tDistance - taken from the calculateTotalDistanceTime function
 		* tTime - taken from the calculateTotalDistanceTime function
 */
-let userDetails = {};
+let userDetails = {
+	make: '',
+	tDistance: 0
+};
 
 var petrolCostPerL = 2.20;
 
@@ -149,18 +152,23 @@ function clearCards(){
 }
 
 $('#submitPartyDetailsBtn').click(function(){
-	clearCards();
 	rentalLength();
-	groupSizeCalculator();
-	filterCars();
-	$('#vehicleSelectScreen').show();
+	// Checks to make sure that the user has properly filled out the date 
+	if(userDetails.noOfDays > 0){
+		clearCards();
+		groupSizeCalculator();
+		filterCars();
+		$('#vehicleSelectScreen').show();
+	}
+	else{
+		alert('Please enter Pick up date and Drop off date.');
+	}
 });
 
 // Group Size function
 function groupSizeCalculator(){
 	var amountOfPassangers = parseInt(document.getElementById('groupSize').value);
 	userDetails.groupSize = amountOfPassangers;
-
 	return;
 }
 
@@ -224,7 +232,11 @@ function selctVehicle(){
 }
 
 $('#vehicleSubmitBtn').on('click', function(){
-	$('#plotCourseScreen').show();
+	if(userDetails.make === ''){
+		alert('Please select a vehicle');
+	}else{
+		$('#plotCourseScreen').show();
+	}
 });
 
 // Modal information
@@ -402,15 +414,20 @@ function bookTripSection(){
 
 // Book trip and hide all other sections
 $('#bookTripBtn').on('click', function(){
-	console.log(userDetails);
-	// Calculates the aproximate costs for renting the vehicle
-	calculateCosts();
-	bookTripSection();
-	$('#bookTripScreen').fadeIn();
-	$('#titleScreen').hide();
-	$('#groupDetailsScreen').hide();
-	$('#vehicleSelectScreen').hide();
-	$('#plotCourseScreen').fadeOut();
+	if(userDetails.tDistance == 0){
+		alert('Please Plot Course');
+	}
+	else{
+		console.log(userDetails);
+		// Calculates the aproximate costs for renting the vehicle
+		calculateCosts();
+		bookTripSection();
+		$('#bookTripScreen').fadeIn();
+		$('#titleScreen').hide();
+		$('#groupDetailsScreen').hide();
+		$('#vehicleSelectScreen').hide();
+		$('#plotCourseScreen').fadeOut();
+	}
 });
 
 var map;
@@ -428,7 +445,6 @@ function initMap() {
 	document.getElementById('plotCourseBtn').addEventListener('click', function() {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
 		$('.directions-panel').show();
-		console.log(userDetails);
 	});
 }
 
