@@ -76,8 +76,7 @@ h1, h2, h3 {
   margin: 5px 35px; }
 
 .vehicle-card:hover {
-  box-shadow: 5px 5px 15px darkgrey;
-  cursor: pointer; }
+  box-shadow: 5px 5px 15px darkgrey; }
 
 .car-card-thumbnail {
   height: 25vh;
