@@ -80,6 +80,7 @@ $('#groupDetailsScreen').hide();
 $('#vehicleSelectScreen').hide();
 $('#plotCourseScreen').hide();
 $('#bookTripScreen').hide();
+$('#bookTripBtn').hide();
 
 /* 
 	* User's inputs are recorded in this object 
@@ -159,9 +160,17 @@ $('#submitPartyDetailsBtn').click(function(){
 		groupSizeCalculator();
 		filterCars();
 		$('#vehicleSelectScreen').show();
+		document.getElementById('groupDetailAlert').innerHTML = '';
 	}
 	else{
-		alert('Please enter Pick up date and Drop off date.');
+		// Alert created if the user does not fill out the required fields
+		document.getElementById('groupDetailAlert').innerHTML = 
+		'<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">' + 
+			'Please enter ensure Pick up date, Drop off date and group size are correctly entered.' + 
+			'<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+				'<span aria-hidden="true">&times;</span>' +
+			'</button>' +
+		'</div>'; 
 	}
 });
 
@@ -233,8 +242,16 @@ function selctVehicle(){
 
 $('#vehicleSubmitBtn').on('click', function(){
 	if(userDetails.make === ''){
-		alert('Please select a vehicle');
-	}else{
+		document.getElementById('pickVehicleAlert').innerHTML = 
+		'<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">' + 
+			'Please select a vehicle before proceeding.' + 
+			'<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+				'<span aria-hidden="true">&times;</span>' +
+			'</button>' +
+		'</div>'; 
+
+	} else{
+		document.getElementById('pickVehicleAlert').innerHTML = '';
 		$('#plotCourseScreen').show();
 	}
 });
@@ -434,17 +451,328 @@ var map;
 function initMap() {
 	// Needed to make routues between places. It will open a new object called 'dircetionsService' 
 	var directionsService = new google.maps.DirectionsService;
-	var directionsRenderer = new google.maps.DirectionsRenderer;
+	var directionsRenderer = new google.maps.DirectionsRenderer({
+		polylineOptions: {
+		// Changes the colour of the directions line
+			strokeColor: '#d7a130'
+		}
+	});
+	var styledMapType = new google.maps.StyledMapType([
+		{
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#1d2c4d"
+		    }
+		  ]
+		},
+		{
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#ebf5fe"
+		    }
+		  ]
+		},
+		{
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#000000"
+		    },
+		    {
+		      "weight": 1
+		    }
+		  ]
+		},
+		{
+		  "featureType": "administrative.country",
+		  "elementType": "geometry.stroke",
+		  "stylers": [
+		    {
+		      "color": "#4b6878"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "administrative.land_parcel",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#515151"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "administrative.province",
+		  "elementType": "geometry.stroke",
+		  "stylers": [
+		    {
+		      "color": "#4b6878"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.man_made",
+		  "elementType": "geometry.stroke",
+		  "stylers": [
+		    {
+		      "color": "#334e87"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.natural",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#000080"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.natural",
+		  "elementType": "geometry.fill",
+		  "stylers": [
+		    {
+		      "color": "#122d49"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.natural",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#d9f0dc"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.natural",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#000000"
+		    },
+		    {
+		      "weight": 1
+		    }
+		  ]
+		},
+		{
+		  "featureType": "landscape.natural.landcover",
+		  "elementType": "geometry.fill",
+		  "stylers": [
+		    {
+		      "color": "#131a2f"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#283d6a"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#6f9ba5"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#1d2c4d"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi.park",
+		  "elementType": "geometry.fill",
+		  "stylers": [
+		    {
+		      "color": "#005e36"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi.park",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#ddf0e2"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "poi.park",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#000000"
+		    },
+		    {
+		      "weight": 1
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#304a7d"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#98a5be"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#1d2c4d"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road.highway",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#2c6675"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road.highway",
+		  "elementType": "geometry.stroke",
+		  "stylers": [
+		    {
+		      "color": "#255763"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road.highway",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#b0d5ce"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "road.highway",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#023e58"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "transit",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#98a5be"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "transit",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    {
+		      "color": "#1d2c4d"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "transit.line",
+		  "elementType": "geometry.fill",
+		  "stylers": [
+		    {
+		      "color": "#298a09"
+		    },
+		    {
+		      "weight": 1.5
+		    }
+		  ]
+		},
+		{
+		  "featureType": "transit.station",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#3a4762"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "water",
+		  "elementType": "geometry",
+		  "stylers": [
+		    {
+		      "color": "#0e1626"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "water",
+		  "elementType": "geometry.fill",
+		  "stylers": [
+		    {
+		      "color": "#3084e0"
+		    }
+		  ]
+		},
+		{
+		  "featureType": "water",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    {
+		      "color": "#4e6d70"
+		    }
+		  ]
+		}
+	],
+	{name: 'Styled Map'});
 	// Creating the new map object
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 6,
 		center: {lat: -41.010786, lng: 175.325764}  
 	});
+
+	//Associate the styled map with the MapTypeId and set it to display.
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
+
 	directionsRenderer.setMap(map);
 	// When the submit button is clicked, the function to calculate the distance between the start and stop markers are calculated
 	document.getElementById('plotCourseBtn').addEventListener('click', function() {
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
 		$('.directions-panel').show();
+		$('#bookTripBtn').show();
 	});
 }
 

@@ -18,8 +18,8 @@
 		
 		<!-- Landing page of the site -->
 		<div class="section bg-light" id="titleScreen">
-			<div class="row align-items-center justify-content-md-center landing-page">
-				<div class="text-center align-middle">
+			<div class="row d-flex justify-content-center align-items-center flex-wrap">
+				<div class="text-center landing-page col-12">
 					<h1 class="display-1">Tourism New Zealand Presents</h1>
 					<h2 class="display-4">The Great Kiwi Road Trip</h2>
 					<img src="assets/tourismNZLogo.jpg" class="site-logo">
@@ -37,7 +37,7 @@
 					
 				</div>
 				<!-- Form Container -->
-				<div class="col-lg-6">
+				<div class="col-lg-6 overflow-auto form-container">
 					<h3>Group Details</h3>
 					<hr class="heading-underline">
 					
@@ -47,14 +47,15 @@
 						<!-- Starting date -->
 						<div class="date-picker-container col-lg">
 							<label for="startDate">Pick Up (YYYY-MM-DD)</label>
-							<input type="text" id="startDate" size="30" class="form-control date-picker" autocomplete="off" required>
+							<input type="text" id="startDate" size="30" class="form-control date-picker" autocomplete="off" placeholder="YYYY-MM-DD" required>
 						</div>
 						<!-- Ending date -->
 						<div class="date-picker-container col-lg">
 							<label for="endDate">Drop Off (YYYY-MM-DD)</label>
-							<input type="text" id="endDate" size="30" class="form-control date-picker" autocomplete="off" required>
+							<input type="text" id="endDate" size="30" class="form-control date-picker" autocomplete="off" placeholder="YYYY-MM-DD" required>
 						</div>
 					</div>
+						
 					<h4>Group Size</h4>
 					<!-- Group Size -->
 					<div class="row">
@@ -69,6 +70,9 @@
       							<option value="6">6</option>
     						</select>
 						</div>
+					</div>
+					<!-- Area for alert to pop-up -->
+					<div class="row" id="groupDetailAlert">
 					</div>
 					<!-- Submit button container -->
 					<div class="row">
@@ -85,12 +89,15 @@
 		<div class="section bg-light" id="vehicleSelectScreen">
 			<div class="row">
 				<!-- Form Container -->
-				<div class="col-lg-9">
+				<div class="col-lg-9 overflow-auto form-container">
 					<h3>Pick Vehicle</h3>
 					<hr class="heading-underline">
 					<!-- Car cards -->
 					<div class="row align-items-center justify-content-md-center" id="vehicleCard">
 						<!-- Vehicles cars are dynamically added here -->
+					</div>
+					<!-- Area for alert to pop-up -->
+					<div class="row" id="pickVehicleAlert">
 					</div>
 					<!-- Submit button -->
 					<button class="btn btn-lg btn-primary float-right submit-btn" id="vehicleSubmitBtn"><a href="#plotCourseScreen">Submit</a></button>
@@ -110,7 +117,7 @@
 					<div id="map"></div>
 				</div>
 				<!-- Form container -->
-				<div class="col-lg-4">
+				<div class="col-lg-4 overflow-auto form-container">
 					<h3>Plot Course</h3>
 					<hr class="heading-underline">
 					<!-- Selection starting input -->
@@ -161,7 +168,7 @@
 						<label for="Palmerston North" class="form-check-label">Palmerston North</label><br>
 						<!-- Wellington -->
 						<input type="checkbox" name="waypoints" class="form-check-input" value="Wellington">
-						<label for="Wellington" class="form-check-label">Wellington</label><br>
+						<label for="Wellington" class="form-check-label">Wellington</label><br><hr>
 						<h5>South Island</h5><hr>
 						<!-- Nelson -->
 						<input type="checkbox" name="waypoints" class="form-check-input" value="Nelson">
@@ -208,7 +215,7 @@
 					</select> <br>
 					<!-- Button container -->
 					<div>
-						<button class="btn btn-lg btn-block btn-primary" id="plotCourseBtn">Plot Course</button>
+						<button class="btn btn-lg btn-block btn-primary submit-btn" id="plotCourseBtn">Plot Course</button>
 						<!-- <button class="btn btn-lg btn-block btn-primary" id="tripDetailsBtn">Trip Details</button> -->
 						<button class="btn btn-lg btn-block btn-primary submit-btn" id="bookTripBtn">Book Trip</button>
 					</div>

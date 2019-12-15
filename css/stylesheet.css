@@ -250,7 +250,8 @@ h1, h2, h3 {
   box-shadow: 0px 0px 5px #333 !important; }
 
 .submit-btn {
-  margin-top: 25px; }
+  margin-top: 25px;
+  margin-bottom: 25px; }
 
 .btn-cards {
   margin: 5px 5px; }
@@ -278,11 +279,14 @@ h3 {
   top: 2%;
   left: 3%; }
 
+.alert {
+  margin: 5px 0; }
+
+.form-container {
+  max-height: 100vh; }
+
 .heading-underline {
   border: 2px solid #1c2430; }
-
-.date-picker {
-  width: 270px; }
 
 .date-picker-container {
   margin: 0 2% 15% 0; }
@@ -291,7 +295,7 @@ h3 {
   min-height: 100vh; }
 
 .landing-page {
-  padding-top: 27vh; }
+  padding-top: 30vh; }
 
 .row {
   margin: 0; }
@@ -332,12 +336,16 @@ h3 {
   min-height: 100vh;
   margin: 0 -15px; }
 
-@media only screen and (max-width: 1134px) {
+@media only screen and (max-width: 1250px) {
   .vehicle-card {
+    width: 32vw;
     margin: 1%; } }
 @media only screen and (max-width: 991px) {
   h3 {
     font-size: 2rem; }
+
+  .form-container {
+    max-height: auto; }
 
   .submit-btn {
     margin-bottom: 1%; }
@@ -385,16 +393,16 @@ h3 {
 
   #map {
     min-height: 80vh; } }
+@media only screen and (max-width: 768px) {
+  .vehicle-card {
+    width: 80vw;
+    margin: 1% auto; } }
 @media only screen and (max-width: 520px) {
   .display-1 {
     font-size: 3rem; }
 
   .display-4 {
     font-size: 2rem; }
-
-  .vehicle-card {
-    width: 80vw;
-    margin: 1% auto; }
 
   .vehicle-modal-info {
     width: 100%;

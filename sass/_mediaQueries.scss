@@ -1,6 +1,7 @@
 // Fixing vehicle select cards
-@media only screen and (max-width: 1134px){
+@media only screen and (max-width: 1250px){
 	.vehicle-card{
+		width: 32vw;
 		margin: 1%;
 	}
 }
@@ -10,6 +11,9 @@
 	// Universal selectors
 	h3{
 		font-size: 2rem;
+	}
+	.form-container{
+		max-height: auto;
 	}
 	.submit-btn{
 		margin-bottom: 1%; 
@@ -65,6 +69,13 @@
 	}
 }
 
+@media only screen and (max-width: 768px){
+	.vehicle-card{
+		width: 80vw;
+		margin: 1% auto;
+	}
+}
+
 // Media Query phone
 @media only screen and (max-width: 520px){
 	// Universal selectors
@@ -75,10 +86,6 @@
 		font-size: 2rem;
 	}
 	// Vehicle select
-	.vehicle-card{
-		width: 80vw;
-		margin: 1% auto;
-	}
 		// Vehicle Modal
 		.vehicle-modal-info{
 			width: 100%;

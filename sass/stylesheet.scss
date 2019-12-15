@@ -18,11 +18,14 @@ h3{
 	top: 2%;
 	left: 3%;
 }
+.alert{
+	margin: 5px 0;
+}
+.form-container{
+	max-height: 100vh;
+}
 .heading-underline{
 	border: 2px solid #1c2430;
-}
-.date-picker{
-	width: 270px;
 }
 .date-picker-container{
 	margin: 0 2% 15% 0;
@@ -31,7 +34,7 @@ h3{
 	min-height: 100vh;
 }
 .landing-page{
-	padding-top: 27vh;
+	padding-top: 30vh;
 }
 .row{
 	margin: 0;
