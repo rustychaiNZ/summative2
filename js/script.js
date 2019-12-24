@@ -403,7 +403,7 @@ function bookTripSection(){
 			'<h4><b>Total Time</b></h4>' +
 		'</div>' +
 		'<div class="col-6">' +
-			'<h4>' + userDetails.tTime + ' hours spent driving approximately</h4>' +
+			'<h4>' + userDetails.convertedTime + ' hours spent driving approximately</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>'+
@@ -815,6 +815,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 				// summaryPanel.innerHTML = '<b>Total Distance for trip is:' +  + '</b>';
 			}
 			calculateTotalDistanceTime(response);
+
 		} else {
 			window.alert('Directions request failed due to ' + status);
 		}
@@ -834,13 +835,13 @@ function calculateTotalDistanceTime(result){
 	totalDist = parseInt(totalDist / 1000);
 	// Converts time from seconds to minutes
 	totalTime = parseFloat((totalTime / 60 / 60).toFixed(2));
-	document.getElementById('total').innerHTML = '';
-	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + totalDist + 'km and total approximate driving time ' + totalTime + ' Hours</b></p>';
-
 	// Adds total distance traveled to userDetails object
 	userDetails.tDistance = totalDist;
 	// Adds total time spent travalling to userDetails object
 	userDetails.tTime = totalTime;
+	document.getElementById('total').innerHTML = '';
+	convertTime();
+	document.getElementById('total').innerHTML += '<p><b>Total distance is: ' + userDetails.tDistance + 'km <br> Total approximate driving time ' + userDetails.convertedTime + ' </b></p>';
 }
 // Works out the aproximate cost for petrol
 function calculateCosts(){
@@ -848,4 +849,19 @@ function calculateCosts(){
 	userDetails.aproxPetrolConsumption = (userDetails.fuelConsumption * (userDetails.tDistance / 100)).toFixed(2);
 	// Calculates total rental cost
 	userDetails.totalRentalCost = userDetails.costPerDay * userDetails.noOfDays;
+}
+
+// Calculates time
+function convertTime(){
+	var hours = 0;
+	var minutes = 0;
+	var convertedTime = '';
+
+	hours = parseInt(userDetails.tTime);
+	minutes = parseInt((userDetails.tTime % 1) * 60);
+
+	convertedTime = hours + ' hours ' + minutes + ' minutes ';
+	userDetails.convertedTime = convertedTime;
+
+	console.log(convertedTime + userDetails.tTime + ' unconverted time');
 }
