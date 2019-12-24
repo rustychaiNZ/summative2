@@ -349,80 +349,80 @@ function bookTripSection(){
 	document.getElementById('tripDetailsReadOut').innerHTML = 
 	// Number of days that the vehicle is being rented
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Number of Days rented</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.noOfDays + '</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>' +
 	// Total rental cost
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Total Rental Cost</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>$' + userDetails.totalRentalCost + ' for ' + userDetails.noOfDays + ' day(s)</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>'+
 	// Number of people in the group
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Group Size</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.groupSize + ' person(s)</h4>' +
 		'</div>' +
 		'<hr>' + 
 	'</div>' +
 	// Car selected
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Vehicle Selected</b>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.make + ' ' + userDetails.model + '</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>' +
 	// Total distance Traveling
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Total Distance</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.tDistance + 'km</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>'+
 	// Total time traveling
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Total Time</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.convertedTime + ' hours spent driving approximately</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>'+
 	// Aproximate petrol used
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Aproximate Petrol Used</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>' + userDetails.aproxPetrolConsumption + '/L</h4>' +
 		'</div>' +
 		'<hr>' +
 	'</div>' +
 	// Aproximate petrol cost
 	'<div class="row">' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4><b>Aproximate Petrol Cost</b></h4>' +
 		'</div>' +
-		'<div class="col-6">' +
+		'<div class="col-md-6">' +
 			'<h4>$' + ((userDetails.aproxPetrolConsumption * petrolCostPerL).toFixed(2)) + ' total</h4>' +
 		'</div>' +
 		'<hr>' +

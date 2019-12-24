@@ -54,6 +54,9 @@
 							<label for="endDate">Drop Off (YYYY-MM-DD)</label>
 							<input type="text" id="endDate" size="30" class="form-control date-picker" autocomplete="off" placeholder="YYYY-MM-DD" required>
 						</div>
+						<!-- Area for alert to pop-up -->
+						<div class="row alert-container" id="groupDetailAlert">
+						</div>
 					</div>
 						
 					<h4>Group Size</h4>
@@ -70,9 +73,6 @@
       							<option value="6">6</option>
     						</select>
 						</div>
-					</div>
-					<!-- Area for alert to pop-up -->
-					<div class="row" id="groupDetailAlert">
 					</div>
 					<!-- Submit button container -->
 					<div class="row">
@@ -212,7 +212,7 @@
 						<option value="Wellington">Wellington</option>
 						<option value="Taupo">Taupo</option>
 						<option value="Auckland">Auckland</option>
-					</select> <br>
+					</select>
 					<!-- Button container -->
 					<div>
 						<button class="btn btn-lg btn-block btn-primary submit-btn" id="plotCourseBtn">Plot Course</button>
